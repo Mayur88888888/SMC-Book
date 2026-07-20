@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch03 — Flow & Charge Design | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 03 — Flow and Charge Design</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part I — Process Physics • Chapter 03</div>
+      <h1>Flow and charge design: coverage, placement, knit lines</h1>
+
+      <div class="callout">
+        <strong>Why this chapter matters</strong>
+        <p style="margin:0;">
+          SMC molding is rarely “just press and cure.” The charge pattern determines how far the material must flow,
+          where flow fronts meet, where air is trapped, and where fiber orientation and resin richness vary.
+          Because viscosity rises as cure progresses, the time available for flow is finite; cure cycle variability
+          can change how much flow occurs before cure and therefore change thickness/consolidation and final quality. [1]
+        </p>
+      </div>
+
+      <h2>3.1 Flow in compression molding: a practical picture</h2>
+      <p>
+        The dominant kinematic driver is <strong>squeeze flow</strong> between the closing mold halves.
+        But the effective flow behavior is not that of a neat resin: chopped fibers, fillers, and partially
+        matured resin form a complex material whose apparent viscosity and flow regime depend on temperature and cure state.
+      </p>
+
+      <h3>3.1.1 Key flow regimes you should expect (engineering taxonomy)</h3>
+      <ul>
+        <li><strong>Macro-squeeze flow:</strong> bulk charge spreads laterally as thickness reduces.</li>
+        <li><strong>Feature filling:</strong> ribs/bosses fill through local pressure gradients; can lag behind panel fill.</li>
+        <li><strong>Front meeting / knit line creation:</strong> two flow fronts meet and “weld” (strength depends on local conditions).</li>
+        <li><strong>Air evacuation competition:</strong> the same paths used to fill must also allow air to escape; venting becomes critical.</li>
+      </ul>
+
+      <h2>3.2 The “charge coverage ratio” concept</h2>
+      <p>
+        Define the <strong>coverage ratio</strong> as:
+      </p>
+      <pre>coverage_ratio = (projected area of charge at placement) / (projected area of final part cavity)</pre>
+      <p>
+        Coverage ratio is not a universal constant; it is a design knob trading off:
+      </p>
+      <ul>
+        <li><strong>Flow distance and fill difficulty:</strong> low coverage requires longer flow and more time in the low-viscosity window.</li>
+        <li><strong>Fiber orientation gradients:</strong> long flow distances promote strong alignment along flow paths (anisotropy in properties).</li>
+        <li><strong>Knit line count/locations:</strong> multiple charges can create more meeting fronts.</li>
+        <li><strong>Air entrapment risk:</strong> “islands” of charge can trap air pockets unless venting and closing profile are well designed.</li>
+      </ul>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Heuristic guidance (use as a starting point, then validate)</h3>
+        <ul>
+          <li>Cosmetic panels: often prefer higher coverage and controlled flow to reduce surface waviness and flow marks.</li>
+          <li>Structural parts: may accept more flow if it improves fiber distribution in features, but knit-line placement must be managed.</li>
+          <li>Electrical/FR parts: often prioritize low porosity and consistent fill; venting strategy becomes high priority.</li>
+        </ul>
+      </div>
+
+      <h2>3.3 Charge placement strategy (how to “design the mold fill”)</h2>
+
+      <h3>3.3.1 Placement objectives</h3>
+      <ol>
+        <li>Minimize required flow distance before gel/viscosity rise closes the flow window.</li>
+        <li>Direct flow to fill hard-to-fill features (ribs/bosses) early enough.</li>
+        <li>Force flow fronts (knit lines) into low-stress regions or regions that will be trimmed/hidden.</li>
+        <li>Provide air evacuation paths toward vents and parting lines.</li>
+      </ol>
+
+      <h3>3.3.2 Common placement patterns (single vs multi-charge)</h3>
+      <div class="grid two">
+        <div class="panel">
+          <h4 style="margin-top:0;">Single central charge</h4>
+          <ul>
+            <li>Simple handling.</li>
+            <li>Large flow distances to edges/corners; risk of incomplete fill if viscosity rises early.</li>
+            <li>Often produces strong fiber alignment radially outward (anisotropic panel behavior).</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4 style="margin-top:0;">Multiple distributed charges</h4>
+          <ul>
+            <li>Reduces maximum flow distance; helps fill corners and thin features.</li>
+            <li>Creates multiple meeting fronts (knit lines), requiring careful management.</li>
+            <li>Air trapping can worsen if islands of charge seal off pockets before venting.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>3.4 Knit lines / weld lines: mechanism and mitigation</h2>
+      <p>
+        Knit lines form when two flow fronts meet. In SMC, this junction can be mechanically weaker due to:
+      </p>
+      <ul>
+        <li>fiber orientation mismatch across the meeting plane</li>
+        <li>local resin richness or depletion</li>
+        <li>air/volatile entrapment at the meeting front</li>
+        <li>reduced interdiffusion/“healing” if viscosity is already high due to cure advancement</li>
+      </ul>
+
+      <h3>3.4.1 How cure cycle variability affects knit-line quality</h3>
+      <p>
+        Cure-cycle variations can change resin flow prior to cure and change the time available for fronts to merge under pressure. [1]
+        If the viscosity rises too early, the knit line can become a “frozen” interface with poor consolidation.
+      </p>
+
+      <h3>3.4.2 Practical mitigation actions</h3>
+      <ul>
+        <li>Relocate knit lines by changing charge pattern and/or adding flow leaders in tooling.</li>
+        <li>Adjust closing speed profile: allow air to evacuate before sealing and packing.</li>
+        <li>Use venting to prevent a trapped air layer at the meeting front.</li>
+        <li>Stabilize charge temperature and material maturity to reduce viscosity scatter.</li>
+      </ul>
+
+      <h2>3.5 Feature filling: ribs, bosses, and thickness transitions</h2>
+      <p>
+        Features such as ribs and bosses can be “last to fill” because they require local material transport into narrow sections.
+        Feature filling competes with panel filling and can be sensitive to viscosity and pressure history.
+      </p>
+
+      <h3>3.5.1 Why thickness transitions create problems</h3>
+      <ul>
+        <li>Local heat-up rates differ; cure advances at different rates across the part thickness.</li>
+        <li>Thickness variation affects consolidation and curing uniformity. [1]</li>
+        <li>Rib roots can create stress concentration and surface sink/print-through risks (cosmetic concern).</li>
+      </ul>
+
+      <h2>3.6 Air evacuation during filling (venting interacts with charge design)</h2>
+      <p>
+        Charge placement defines how air is pushed through the cavity. If a charge island seals off a pocket early,
+        the remaining air must dissolve, compress, or remain as porosity. Since processing conditions affect porosity
+        (time–temperature profile, vacuum/pressure, viscosity/flow), venting and charge design must be treated together. [3]
+      </p>
+
+      <div class="callout">
+        <strong>Design-for-venting principle</strong>
+        <p style="margin:0;">
+          Every major flow path should have an air escape path to a vent or parting line before the path is sealed by packing.
+          If you cannot guarantee this with the current charge pattern, change the pattern first before “tuning” the cure cycle.
+        </p>
+      </div>
+
+      <h2>3.7 A practical workflow for charge design (repeatable method)</h2>
+      <ol>
+        <li><strong>Start with geometry:</strong> identify hard-to-fill zones (thin ribs, corners, deep draws, bosses).</li>
+        <li><strong>Propose charge pattern(s):</strong> choose coverage ratio and island locations to shorten flow to hard zones.</li>
+        <li><strong>Predict knit lines:</strong> draw expected flow fronts and meeting locations; move them away from critical load paths.</li>
+        <li><strong>Define vent plan:</strong> ensure air evacuation routes exist along the predicted flow and meeting lines.</li>
+        <li><strong>Trial and instrument:</strong> record press force-position-time and mold temperature traces; correlate defects with signatures.</li>
+        <li><strong>Lock “golden pattern”:</strong> standardize charge mass, cut dimensions, and placement tolerance.</li>
+      </ol>
+
+      <h2>3.8 What we quantify next: rheology and the closing flow window</h2>
+      <p>
+        This chapter has treated flow qualitatively. The limiting factor is often the rapid increase in viscosity
+        as the crosslink network forms. The next chapter builds viscosity models and shows how temperature and degree
+        of cure control processability.
+      </p>
+
+      <div class="pager">
+        <a href="ch02_process_overview.html">Prev: Ch02</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch04_rheology.html">Next: Ch04</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 03 — Flow and Charge Design</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

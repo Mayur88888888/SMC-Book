@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch07 — Compaction & Thickness | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 07 — Compaction, consolidation, thickness control</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part I — Process Physics • Chapter 07</div>
+      <h1>Compaction, consolidation, and thickness control</h1>
+
+      <div class="callout">
+        <strong>Connection to quality</strong>
+        <p style="margin:0;">
+          Cure cycle variations can change resin flow prior to cure, level of cure, and the finished thickness.
+          Thickness variation can affect consolidation and curing uniformity. [1]
+        </p>
+      </div>
+
+      <h2>7.1 Definitions: compaction vs consolidation (useful distinction)</h2>
+      <ul>
+        <li><strong>Compaction:</strong> reduction of bulk thickness under applied pressure as the charge spreads and densifies.</li>
+        <li><strong>Consolidation:</strong> elimination/reduction of internal voids and achievement of intimate contact within the material and against the mold surface.</li>
+      </ul>
+      <p>
+        In thermoset SMC, consolidation is time-dependent because viscosity increases during cure (Ch04). This means
+        consolidation capability is high early and decreases near gelation.
+      </p>
+
+      <h2>7.2 Press pressure/force and thickness: what you can control</h2>
+      <p>
+        The press controls force (or pressure) and displacement (closing position). The part thickness outcome is governed by:
+      </p>
+      <ul>
+        <li><strong>Tooling geometry and stop conditions</strong> (fixed cavity height vs force-controlled shutoff)</li>
+        <li><strong>SMC bulk compressibility and flow resistance</strong> (depends on temperature and cure state)</li>
+        <li><strong>Charge mass distribution</strong> (local mass surplus drives local flow and local pressure gradients)</li>
+        <li><strong>Press/mold compliance</strong> (platen deflection, tool bending, thermal expansion)</li>
+      </ul>
+
+      <h2>7.3 Why thickness varies (root causes)</h2>
+
+      <h3>7.3.1 Press and tool mechanics</h3>
+      <ul>
+        <li><strong>Platen parallelism errors:</strong> creates systematic thickness wedge.</li>
+        <li><strong>Platen/tool deflection:</strong> center vs edge thickness differences depending on load path and stiffness.</li>
+        <li><strong>Thermal expansion gradients:</strong> uneven heating can change tool dimensions and local cavity gap.</li>
+      </ul>
+
+      <h3>7.3.2 Material and cycle-induced causes</h3>
+      <ul>
+        <li><strong>Charge mass variability:</strong> thickness tends to increase where mass is high if flow is restricted.</li>
+        <li><strong>Charge maturity variability:</strong> shifts viscosity window; can lead to earlier “freeze” and incomplete spread.</li>
+        <li><strong>Cure cycle variability:</strong> changes flow prior to cure and can change finished thickness. [1]</li>
+      </ul>
+
+      <h2>7.4 Thickness variation → nonuniform cure and consolidation (mechanism)</h2>
+      <p>
+        The handbook excerpt directly notes that thickness variation affects consolidation and curing uniformity. [1]
+        Here is the mechanism chain you should use in troubleshooting:
+      </p>
+      <ol>
+        <li><strong>Thickness varies</strong> → local heat-up rate changes (Ch06).</li>
+        <li><strong>Temperature history varies</strong> → local cure rate varies (Ch05).</li>
+        <li><strong>Cure varies</strong> → viscosity rise timing varies (Ch04).</li>
+        <li><strong>Viscosity and pressure effectiveness vary</strong> → local void content and surface replication vary (Ch08, Ch12).</li>
+      </ol>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Practical diagnostic: thickness map + defect map</h3>
+        <ul>
+          <li>Make a thickness heatmap (grid measurement).</li>
+          <li>Overlay porosity indicators (pinholes, density, micro-CT if available).</li>
+          <li>If defects track thickness gradients, treat it as a coupled thermal/compaction problem, not only “venting.”</li>
+        </ul>
+      </div>
+
+      <h2>7.5 A minimal compaction model (for engineering calculations)</h2>
+      <p>
+        Even without full constitutive modeling, you can represent bulk compaction with an empirical relationship between
+        pressure and thickness (or fiber volume fraction) at a given temperature and material state.
+      </p>
+      <pre>
+h = g(p, T, a, material_state)
+</pre>
+      <p class="small">
+        In production, you often back-calculate this relationship from press displacement/force data and final part thickness.
+      </p>
+
+      <h2>7.6 Press curve signatures (how compaction appears in data)</h2>
+      <ul>
+        <li><strong>Early stage:</strong> force rises gradually as thickness decreases; material flows.</li>
+        <li><strong>Approach to cavity fill:</strong> force slope increases (less free volume, more resistance to flow).</li>
+        <li><strong>Near gelation:</strong> force can spike for a given displacement because material stiffens and relaxes more slowly.</li>
+      </ul>
+      <p>
+        In Ch11, we formalize this as “golden curves” for process monitoring.
+      </p>
+
+      <h2>7.7 Control plan: how to make thickness robust</h2>
+      <ol>
+        <li><strong>Tool and press qualification:</strong> verify platen parallelism under load; verify tool stiffness and shutoff behavior.</li>
+        <li><strong>Thermal qualification:</strong> verify temperature uniformity across tool surface (Ch06).</li>
+        <li><strong>Charge control:</strong> control mass, dimensions, and placement tolerances (Ch03).</li>
+        <li><strong>Cycle control:</strong> control closing speed and dwell to stabilize flow before viscosity rise (Ch10).</li>
+        <li><strong>Routine measurement:</strong> thickness mapping on sampling plan; correlate with press curve drift.</li>
+      </ol>
+
+      <h2>7.8 What’s next: porosity and venting</h2>
+      <p>
+        With thickness control understood, we can treat porosity systematically. The next chapter builds a complete porosity
+        mechanism set (air entrapment, volatile expansion, void collapse under pressure) and ties it back to the excerpt’s
+        statement that processing conditions (time–temperature, vacuum/pressure, viscosity/flow) influence porosity. [3]
+      </p>
+
+      <div class="pager">
+        <a href="ch06_heat_transfer_exotherm.html">Prev: Ch06</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch08_porosity_and_venting.html">Next: Ch08</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 07 — Compaction & Thickness</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

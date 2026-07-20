@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch10 — Press & Cycle Design | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 10 — Press mechanics and cycle design</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part II — Tooling, Press, and Control • Chapter 10</div>
+      <h1>Press mechanics and cycle design: closing speed, tonnage, dwell</h1>
+
+      <div class="callout">
+        <strong>Handbook-anchored control principle</strong>
+        <p style="margin:0;">
+          Press curing is monitored to ensure curing parameters are met—specifically pressure, temperature, and time. [4]
+          Cure-cycle variations (temperature, pressure, time) change resin flow prior to cure, the level of cure, and finished thickness,
+          and thickness variation affects consolidation/cure uniformity. [1]
+        </p>
+      </div>
+
+      <h2>10.1 What the press is “really” controlling</h2>
+      <p>
+        A compression press can be thought of as controlling two coupled histories:
+      </p>
+      <ul>
+        <li><strong>Displacement/position history:</strong> how the mold gap closes vs time (closing speed profile).</li>
+        <li><strong>Force/pressure history:</strong> how much load is applied during filling, packing, and cure dwell.</li>
+      </ul>
+      <p>
+        The material response is governed by temperature and cure state (Ch04–Ch06), so the same press program can yield different
+        outcomes if the charge maturity or tool temperature drifts.
+      </p>
+
+      <h2>10.2 Tonnage sizing (engineering logic)</h2>
+      <p>
+        Tonnage must be sufficient to:
+      </p>
+      <ul>
+        <li>fill features and corners before viscosity rises (flow resistance)</li>
+        <li>compact/consolidate and collapse voids (Ch07–Ch08)</li>
+        <li>maintain shutoff sealing and flash land closure (Ch09)</li>
+      </ul>
+      <p>
+        A common first-pass sizing uses projected area times a target molding pressure, then adds margins for:
+        </p>
+      <ul>
+        <li>feature filling pressure spikes</li>
+        <li>tooling compliance and deflection</li>
+        <li>process variability and safety factors</li>
+      </ul>
+      <p class="small">
+        Because you indicated “no limitations,” this book focuses on the physics and control logic rather than a single numeric rule.
+      </p>
+
+      <h2>10.3 Closing speed profile (the hidden “third parameter”)</h2>
+      <p>
+        Most defects blamed on “temperature” or “pressure” are actually caused by the <strong>interaction of closing speed with venting</strong>.
+        A well-designed close typically includes:
+      </p>
+      <ol>
+        <li><strong>Approach:</strong> fast close to near-contact to reduce cycle time and limit charge cooling.</li>
+        <li><strong>Venting stage:</strong> controlled close allowing air evacuation (vents active; avoid premature sealing).</li>
+        <li><strong>Packing stage:</strong> higher pressure and/or faster close after most air is removed to densify and fill last features.</li>
+        <li><strong>Dwell:</strong> maintain conditions for cure completion (Ch05).</li>
+      </ol>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Practical “signature”</h3>
+        <p style="margin:0;">
+          In press data, venting-stage effectiveness often appears as a smooth force rise and stable displacement progression.
+          Premature sealing may show as early force spikes combined with later porosity or short-shot symptoms.
+        </p>
+      </div>
+
+      <h2>10.4 Temperature programming (tool temperature as a boundary condition)</h2>
+      <p>
+        Temperature influences cure kinetics and viscosity evolution; in thick parts, exotherm can significantly affect resin temperature. [2]
+        Therefore:
+      </p>
+      <ul>
+        <li>tool temperature uniformity is as important as setpoint value (Ch06)</li>
+        <li>thickness changes alter thermal lag and can change cure state at demold (Ch07)</li>
+        <li>for thick sections, monitor interior temperatures during development to prevent unanticipated temperature peaks (Ch06)</li>
+      </ul>
+
+      <h2>10.5 Dwell design: what “hold time” must accomplish</h2>
+      <p>
+        Dwell time under pressure/temperature must deliver:
+      </p>
+      <ul>
+        <li><strong>Void suppression completion:</strong> void collapse and gas removal must occur before gel/viscosity rise locks voids in (Ch04–Ch08).</li>
+        <li><strong>Target cure state:</strong> sufficient degree of cure/Tg for demolding and performance (Ch05).</li>
+        <li><strong>Thickness stability:</strong> avoid post-demold thickness changes and distortion; thickness variations affect consolidation and cure uniformity. [1]</li>
+      </ul>
+
+      <h2>10.6 Cure-cycle variability: why small drifts cause big outcomes</h2>
+      <p>
+        The handbook excerpt states directly that cure-cycle variations affect resin flow prior to cure, cure level, and finished thickness. [1]
+        Here is the engineering translation:
+      </p>
+      <ul>
+        <li><strong>Hotter / faster cycle:</strong> earlier viscosity rise → shorter fill/vent window → higher porosity/short shot risk; may also increase flash if low viscosity early.</li>
+        <li><strong>Cooler / slower cycle:</strong> longer flow window but may under-cure at demold; may need longer dwell to meet Tg and performance.</li>
+        <li><strong>Pressure drift:</strong> impacts compaction and void collapse effectiveness; interacts with vent sealing timing.</li>
+      </ul>
+
+      <h2>10.7 Recipe design method (repeatable approach)</h2>
+      <ol>
+        <li><strong>Start with a target thermal history</strong> consistent with resin kinetics and Tg goals (Ch05–Ch06).</li>
+        <li><strong>Choose a close profile</strong> that prioritizes air removal early (Ch08–Ch09).</li>
+        <li><strong>Apply packing pressure</strong> after air removal to consolidate and fill features (Ch07).</li>
+        <li><strong>Set dwell</strong> to reach demold-safe and performance-safe cure state (Ch05).</li>
+        <li><strong>Validate with instrumentation</strong> (tool temperatures, press curves; Ch11).</li>
+      </ol>
+
+      <h2>10.8 Documentation and traceability</h2>
+      <p>
+        A disciplined manufacturing system records and maintains the time–temperature–pressure histories for traceability and conformance.
+        This is consistent with standard practice in composite processing control documentation. [10]
+      </p>
+
+      <h2>10.9 What’s next: instrumentation and process control</h2>
+      <p>
+        The next chapter turns press and tool signals into actionable process control: what sensors to use, how to define
+        “golden curves,” and how to classify control strategies (empirical vs sensor-based vs model-based). [10]
+      </p>
+
+      <div class="pager">
+        <a href="ch09_tooling_design.html">Prev: Ch09</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch11_instrumentation_control.html">Next: Ch11</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 10 — Press & Cycle Design</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch11 — Instrumentation & Control | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 11 — Instrumentation and process control</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part II — Tooling, Press, and Control • Chapter 11</div>
+      <h1>Instrumentation and process control: golden curves and control plans</h1>
+
+      <div class="callout">
+        <strong>Handbook-anchored principle</strong>
+        <p style="margin:0;">
+          Press curing quality depends on meeting cure cycle parameters—pressure, temperature, and time—monitored during the cycle. [4]
+          Processing conditions (time–temperature profile, vacuum/pressure, flow/viscosity) influence porosity, Tg, and surface finish. [3]
+        </p>
+      </div>
+
+      <h2>11.1 Why “data” is mandatory for robust SMC production</h2>
+      <p>
+        SMC molding outcomes are sensitive to cure and flow coupling:
+      </p>
+      <ul>
+        <li>temperature affects viscosity and cure rate (Ch04–Ch06)</li>
+        <li>pressure and close profile affect air removal and void collapse (Ch08–Ch10)</li>
+        <li>thickness variation affects consolidation and cure uniformity (Ch07) [1]</li>
+      </ul>
+      <p>
+        Therefore, robust production requires measuring and controlling the histories that drive these couplings.
+      </p>
+
+      <h2>11.2 What to measure (minimum viable instrumentation)</h2>
+
+      <h3>11.2.1 Press signals</h3>
+      <ul>
+        <li><strong>Force (or pressure) vs time</strong></li>
+        <li><strong>Position (or mold gap) vs time</strong></li>
+        <li><strong>Closing speed</strong> (derived from position/time)</li>
+        <li><strong>Dwell time</strong> and any transitions (venting → packing → cure hold)</li>
+      </ul>
+
+      <h3>11.2.2 Tool temperature signals</h3>
+      <ul>
+        <li>multiple thermocouples/RTDs per mold half (not just one sensor per platen)</li>
+        <li>zone control readings vs independent verification readings</li>
+      </ul>
+
+      <h3>11.2.3 Product and post-process measurements (feedback and QA)</h3>
+      <ul>
+        <li><strong>Part mass</strong> (fast indicator of charge mass stability and flash loss)</li>
+        <li><strong>Thickness map</strong> (links to consolidation and cure uniformity) [1]</li>
+        <li><strong>Visual porosity/pinhole count</strong> and surface quality metrics (application-dependent)</li>
+        <li><strong>Tg or cure indicator</strong> (sample-based verification for structural/electrical critical parts)</li>
+      </ul>
+
+      <h2>11.3 Process records and traceability</h2>
+      <p>
+        Standard composite manufacturing control practice records curing parameters and critical process steps
+        (e.g., tooling concept, cure cycle, bagging procedures in autoclave contexts). [11]
+        In press molding, the analogous expectation is to record the full cure cycle history
+        and any deviations (temperature/pressure/time). [4]
+      </p>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Recommended “lot traveler” fields for SMC</h3>
+        <ul>
+          <li>SMC lot ID, storage temperature history, out-time, maturity window status</li>
+          <li>charge mass, pattern ID, placement notes</li>
+          <li>mold ID, mold surface condition/release notes, vent cleaning status</li>
+          <li>tool temperature setpoints and measured readings at cycle start</li>
+          <li>press recipe ID; recorded force-position-time trace; dwell time</li>
+          <li>inspection results: mass, thickness points, surface class metrics, porosity indication</li>
+        </ul>
+      </div>
+
+      <h2>11.4 Control strategies (taxonomy)</h2>
+      <p>
+        Composite process control schemes can be categorized as: empirical methods, active sensor-based control,
+        and passive model-based control. [10]
+      </p>
+
+      <h3>11.4.1 Empirical (recipe-based) control</h3>
+      <ul>
+        <li>fixed setpoints for temperature/pressure/time</li>
+        <li>works only if incoming material and tool/press conditions are stable</li>
+        <li>often fails when SMC maturity, vent condition, or tool thermal uniformity drifts</li>
+      </ul>
+
+      <h3>11.4.2 Active sensor-based control</h3>
+      <ul>
+        <li>adjusts process in real time based on sensor feedback (e.g., temperature, displacement, cure monitoring)</li>
+        <li>can reduce sensitivity to material lot variability and environmental drift</li>
+        <li>requires sensor robustness and well-defined control logic to avoid “chasing noise”</li>
+      </ul>
+
+      <h3>11.4.3 Passive model-based control</h3>
+      <ul>
+        <li>uses a process model (thermochemical + rheology) to plan or validate the cycle</li>
+        <li>can support recipe generation for new thicknesses/geometries</li>
+        <li>depends on calibrated kinetics and thermal properties (Ch05–Ch06)</li>
+      </ul>
+
+      <h2>11.5 The “golden curve” method (practical and powerful)</h2>
+      <p>
+        A golden curve is a baseline press signature—typically:
+      </p>
+      <ul>
+        <li><strong>force vs time</strong></li>
+        <li><strong>position vs time</strong></li>
+        <li><strong>force vs position</strong> (often the most diagnostic)</li>
+      </ul>
+      <p>
+        When the same tool and charge pattern are run, deviations in the curve often indicate:
+      </p>
+      <ul>
+        <li><strong>material maturity drift:</strong> viscosity shifted (Ch04)</li>
+        <li><strong>tool temperature drift:</strong> cure rate and viscosity evolution shifted (Ch05–Ch06)</li>
+        <li><strong>vent blockage / air removal issue:</strong> early force spikes; later porosity (Ch08–Ch09)</li>
+        <li><strong>press mechanical drift:</strong> parallelism/compliance changes; thickness changes (Ch07)</li>
+      </ul>
+
+      <h3>11.5.1 How to implement golden curves</h3>
+      <ol>
+        <li><strong>Collect baseline runs</strong> under known-good conditions (multiple cycles; stable material lot).</li>
+        <li><strong>Define metrics</strong> (peak force, force at a given position, slope in packing region, area under curve).</li>
+        <li><strong>Set control limits</strong> (SPC-based thresholds).</li>
+        <li><strong>Link to reaction plans</strong> (what to do if a metric drifts: check vents, check tool temperature mapping, check charge mass).</li>
+      </ol>
+
+      <h2>11.6 Reaction plans (turning signals into decisions)</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">If porosity increases</h3>
+          <ul>
+            <li>Verify vents are clean and open (Ch09).</li>
+            <li>Check closing profile: venting stage too short? (Ch10).</li>
+            <li>Check tool temperature uniformity; thick parts may have exotherm shifts (Ch06). [2]</li>
+            <li>Check material moisture/volatiles (incoming QC, Ch01).</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">If thickness drifts</h3>
+          <ul>
+            <li>Check press parallelism and tool shutoff behavior (Ch07).</li>
+            <li>Check charge mass distribution and placement repeatability (Ch03).</li>
+            <li>Check cure cycle drift (temperature/pressure/time). Cure-cycle variability affects finished thickness. [1]</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>11.7 Application-specific control emphasis</h2>
+      <ul>
+        <li><strong>Cosmetic panels:</strong> surface metrics + porosity/pinhole monitoring; demolding discipline (Ch12).</li>
+        <li><strong>Structural:</strong> porosity limits and thickness/cure uniformity; knit-line management (Ch03, Ch13).</li>
+        <li><strong>Electrical/FR:</strong> porosity/dielectric reliability + Tg/cure state validation; additive variability control (Ch01, Ch15).</li>
+      </ul>
+
+      <h2>11.8 What’s next: surface/cosmetic quality and demolding</h2>
+      <p>
+        The next chapter focuses on surface formation, paintability, print-through, and the mechanics of demolding,
+        including the handbook-noted risk that demolding/tool cleaning can damage surface finish and potentially integrity. [3]
+      </p>
+
+      <div class="pager">
+        <a href="ch10_press_and_cycle.html">Prev: Ch10</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch12_surface_cosmetic.html">Next: Ch12</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 11 — Instrumentation & Control</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch14 — Residual Stress & Warpage | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 14 — Residual stress, shrinkage, warpage</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part III — Surface, Defects, Performance • Chapter 14</div>
+      <h1>Residual stress, cure shrinkage, and warpage</h1>
+
+      <div class="callout">
+        <strong>Handbook anchors for distortion drivers</strong>
+        <p style="margin:0;">
+          Cure cycle variations (temperature/pressure/time) affect level of cure and finished thickness, and thickness variations
+          can affect consolidation and curing uniformity. [1] Nonuniform cure and thickness are primary contributors to residual
+          stress gradients and warpage in molded thermoset composites.
+        </p>
+      </div>
+
+      <h2>14.1 What is “residual stress” in molded thermoset SMC?</h2>
+      <p>
+        Residual stress is internal stress locked into the part after processing, without external load.
+        In SMC compression molding, it is generated mainly by:
+      </p>
+      <ul>
+        <li><strong>Cure shrinkage</strong>: chemical shrinkage as the polymer network forms.</li>
+        <li><strong>Thermal contraction</strong>: cooling from cure temperature to room temperature.</li>
+        <li><strong>Tool constraint and friction</strong>: the mold restricts free shrinkage/thermal strain during cure and cooling.</li>
+        <li><strong>Nonuniform cure/temperature</strong>: gradients through thickness and across the part create incompatible strains.</li>
+      </ul>
+
+      <h2>14.2 Cure shrinkage vs thermal contraction (why both matter)</h2>
+      <p>
+        In thermoset systems, shrinkage begins during cure (chemical shrinkage) and continues as the part cools.
+        Cure state also governs properties such as stiffness and thermal expansion. [3]
+        This means the same shrinkage strain applied at different cure states creates different stress outcomes.
+      </p>
+
+      <h3>14.2.1 Simple strain decomposition (conceptual)</h3>
+      <pre>
+total_strain = mechanical_strain + thermal_strain + chemical_shrinkage_strain
+</pre>
+      <p class="small">
+        Later, if you enable equation rendering, we can formalize this with constitutive relations and cure-dependent properties.
+      </p>
+
+      <h2>14.3 Why nonuniformity is the main warpage trigger</h2>
+
+      <h3>14.3.1 Thickness variation leads to cure and consolidation nonuniformity</h3>
+      <p>
+        The handbook excerpt states that thickness variations may affect consolidation and curing uniformity. [1]
+        This is a direct warpage driver:
+      </p>
+      <ul>
+        <li>thicker regions heat up and cure differently (Ch06)</li>
+        <li>exotherm effects are more pronounced in thick regions (Ch06) [2]</li>
+        <li>stiffer/earlier-cured regions constrain later-cured regions → stress gradients</li>
+      </ul>
+
+      <h3>14.3.2 Tool temperature nonuniformity creates “built-in bending moments”</h3>
+      <p>
+        If one region of the tool is hotter:
+      </p>
+      <ul>
+        <li>that region cures faster → earlier modulus increase</li>
+        <li>chemical shrinkage happens earlier under constraint</li>
+        <li>after demold, the imbalance relaxes as warpage/springback</li>
+      </ul>
+
+      <h2>14.4 Typical distortion modes in SMC parts</h2>
+      <ul>
+        <li><strong>Global bow / dish</strong> in large panels</li>
+        <li><strong>Twist</strong> in asymmetric ribs/boss layouts</li>
+        <li><strong>Edge lift</strong> due to edge cooling differences and flow-induced orientation gradients</li>
+        <li><strong>Local sink/print-through</strong> over ribs (cosmetic + dimensional)</li>
+      </ul>
+
+      <h2>14.5 Process levers to reduce warpage (what actually works)</h2>
+
+      <h3>14.5.1 Improve thermal uniformity and predict thick-part behavior</h3>
+      <ul>
+        <li>map and control tool temperature field (Ch06)</li>
+        <li>use instrumented trials to capture exotherm peaks for thick parts [2]</li>
+        <li>avoid overdriving cure so rapidly that internal gradients become severe</li>
+      </ul>
+
+      <h3>14.5.2 Reduce thickness variability and improve consolidation uniformity</h3>
+      <ul>
+        <li>press parallelism and tooling stiffness verification (Ch07)</li>
+        <li>charge mass distribution control (Ch03)</li>
+        <li>stable cure cycle controls to avoid thickness drift [1]</li>
+      </ul>
+
+      <h3>14.5.3 Demold at an appropriate cure state</h3>
+      <p>
+        Demolding too early (part under-cured / too hot / too compliant) can allow distortion during ejection and early cooling.
+        Demolding too late may increase cycle time but can improve dimensional stability.
+        Since cure state affects Tg and stiffness [3], demold criteria should be linked to cure state metrics (Ch05, Ch15).
+      </p>
+
+      <h2>14.6 Measurement and validation: how to quantify warpage</h2>
+      <ul>
+        <li><strong>CMM or 3D scanning</strong>: compare to nominal CAD; produce deformation maps.</li>
+        <li><strong>Curvature metrics</strong> for panels (principal curvature, bow height).</li>
+        <li><strong>Time-dependent checks</strong>: measure immediately after demold and after 24–72 hours to see post-cure relaxation.</li>
+        <li><strong>Correlation to process traces</strong>: compare warpage to tool temperature field and press golden curves (Ch11).</li>
+      </ul>
+
+      <h2>14.7 Model-based prediction (preview)</h2>
+      <p>
+        Predicting warpage rigorously requires coupled thermochemical (T, a), flow/compaction, and stress/deformation modeling,
+        including tool-part interaction. The excerpted literature context emphasizes multi-submodel coupling in curing simulations. [10]
+        We will summarize a practical workflow in Ch16.
+      </p>
+
+      <h2>14.8 What’s next: testing and qualification</h2>
+      <p>
+        The next chapter focuses on testing strategies and how to connect processing history (porosity, cure state, thickness uniformity)
+        to mechanical and functional performance in cosmetic, structural, and electrical/FR applications.
+      </p>
+
+      <div class="pager">
+        <a href="ch13_defects_atlas.html">Prev: Ch13</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch15_testing_qualification.html">Next: Ch15</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 14 — Residual Stress & Warpage</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

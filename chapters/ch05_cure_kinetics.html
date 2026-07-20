@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch05 — Cure Kinetics | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 05 — Cure kinetics and degree of cure</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part I — Process Physics • Chapter 05</div>
+      <h1>Cure kinetics, degree of cure, gelation/vitrification, and Tg evolution</h1>
+
+      <div class="callout">
+        <strong>Why cure kinetics belong in a molding handbook</strong>
+        <p style="margin:0;">
+          The rate of change of degree of cure is often not linear, which makes it difficult to predict resin response to a new
+          temperature profile without a model. In thick structures, reaction heat can significantly change temperature, which
+          feeds back into degree of cure and viscosity. [8]
+        </p>
+      </div>
+
+      <h2>5.1 State of cure and why it matters to SMC molding</h2>
+      <p>
+        Many processing and performance properties depend directly on the state of cure.
+        The provided excerpt explicitly lists examples: glass transition temperature, viscosity,
+        cure shrinkage, stiffness, and thermal expansion. [3]
+      </p>
+      <p>
+        In SMC compression molding this translates to:
+      </p>
+      <ul>
+        <li><strong>Flow window control:</strong> you must fill/vent before viscosity rises due to cure advancement (Ch04).</li>
+        <li><strong>Dimensional stability:</strong> cure shrinkage + thermal contraction + tool constraint drive warpage (Ch14).</li>
+        <li><strong>Demold criteria:</strong> insufficient cure can cause distortion or surface damage on ejection (Ch12).</li>
+      </ul>
+
+      <h2>5.2 Degree of cure (DOC) definition (DSC basis)</h2>
+      <p>
+        Degree of cure is commonly defined using the fraction of reaction enthalpy released:
+      </p>
+      <pre>
+a(t) = (released heat up to time t) / (total reaction heat)
+</pre>
+      <p>
+        Practically, you obtain the total heat of reaction from a fully curing DSC experiment and compute instantaneous conversion from partial heat release.
+      </p>
+
+      <h2>5.3 Cure kinetics: what a “kinetic model” does</h2>
+      <p>
+        A kinetic model aims to predict:
+      </p>
+      <pre>
+da/dt = f(a, T)
+</pre>
+      <p>
+        Key features for thermosets used in SMC:
+      </p>
+      <ul>
+        <li><strong>Nonlinear conversion rate:</strong> autocatalysis is common; rate does not increase linearly with time. [8]</li>
+        <li><strong>Temperature dependence:</strong> rate constants typically follow Arrhenius forms.</li>
+        <li><strong>Coupling with viscosity:</strong> as a increases, viscosity rises sharply (Ch04), limiting further flow and changing heat transfer conditions.</li>
+      </ul>
+
+      <h2>5.4 Gelation: the “end of meaningful flow”</h2>
+      <p>
+        Gelation is the transformation of the polymer from a liquid to a rubbery network state. [9]
+        For molding, gelation is a critical boundary:
+      </p>
+      <ul>
+        <li><strong>Before gelation:</strong> significant redistribution/flow is possible (filling and knit-line healing are most active).</li>
+        <li><strong>Near gelation:</strong> viscosity and relaxation time rise; the part begins to lock in residual stresses and flow-induced orientation patterns.</li>
+        <li><strong>After gelation:</strong> flow becomes extremely limited; further deformation resembles viscoelastic/solid mechanics rather than fluid mechanics.</li>
+      </ul>
+
+      <h3>5.4.1 Degree of cure at gelation, ag</h3>
+      <p>
+        Viscosity models often incorporate a gel point parameter ag; for example, the excerpted cure-dependent viscosity model
+        explicitly uses ag and diverges as a approaches ag. [6]
+      </p>
+
+      <h2>5.5 Vitrification and Tg evolution (why Tg is used as a cure index)</h2>
+      <p>
+        As cure progresses, Tg increases. The excerpt indicates that after gelation, Tg is often used as an index of degree of cure. [8]
+      </p>
+
+      <h3>5.5.1 Practical implication</h3>
+      <ul>
+        <li>If the part temperature is below Tg(a), molecular mobility is restricted and cure can slow (system-dependent).</li>
+        <li>For production, Tg measurements (DMA/DSC) can be used to validate that the cure state is sufficient for service.</li>
+      </ul>
+
+      <h2>5.6 Cure cycle variability and what it changes</h2>
+      <p>
+        Cure cycle variations (temperature, pressure, time) change resin flow prior to cure, the level of cure,
+        and the finished thickness. Thickness variation can affect consolidation and curing uniformity. [1]
+      </p>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Practical drift examples (what to watch in production)</h3>
+        <ul>
+          <li><strong>Tool temperature offset:</strong> faster cure → earlier viscosity rise → incomplete fill, more knit line weakness risk.</li>
+          <li><strong>Lower pressure or delayed pressure build:</strong> less void collapse → porosity increase (Ch08).</li>
+          <li><strong>Different charge condition (maturity):</strong> shifts rheology curve; can mimic a cure-cycle change even if the press recipe is unchanged.</li>
+        </ul>
+      </div>
+
+      <h2>5.7 Parameter identification workflow (what data you need)</h2>
+      <p>
+        A practical development workflow to build usable kinetics for manufacturing and simulation:
+      </p>
+      <ol>
+        <li><strong>DSC experiments:</strong> dynamic scans at multiple heating rates + isothermal holds (as feasible).</li>
+        <li><strong>Fit a kinetic model:</strong> choose a model form and fit f(a,T) parameters.</li>
+        <li><strong>Validate on a “new” cycle:</strong> predict a(t) under a temperature profile not used in fitting.</li>
+        <li><strong>Embed into process models:</strong> couple with viscosity model (Ch04) and heat transfer model (Ch06).</li>
+      </ol>
+
+      <h2>5.8 Minimal modeling set for compression molding engineering</h2>
+      <p>
+        If you cannot build a full kinetics model immediately, the minimum set that still improves robustness:
+      </p>
+      <ul>
+        <li>Gelation time as a function of molding temperature (or a proxy based on rheology).</li>
+        <li>“Demold-safe time” mapping (measured via part stiffness or distortion tests).</li>
+        <li>Tg after molding cycle as a quality verification metric (especially for structural/electrical applications). [8]</li>
+      </ul>
+
+      <h2>5.9 What’s next: thermal gradients and exotherm</h2>
+      <p>
+        Kinetics alone do not determine cure; you need the temperature field in the part.
+        The next chapter develops the heat transfer + exotherm framework and explains why thick SMC parts can
+        experience interior temperature overshoot driven by reaction heat. [8]
+      </p>
+
+      <div class="pager">
+        <a href="ch04_rheology.html">Prev: Ch04</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch06_heat_transfer_exotherm.html">Next: Ch06</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 05 — Cure Kinetics</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

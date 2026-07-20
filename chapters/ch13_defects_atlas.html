@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch13 — Defects Atlas | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 13 — Defects atlas and troubleshooting</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part III — Surface, Defects, Performance • Chapter 13</div>
+      <h1>Defects atlas: symptom → mechanism → check → fix</h1>
+
+      <div class="callout">
+        <strong>Handbook anchors for troubleshooting logic</strong>
+        <p style="margin:0;">
+          (i) Cure-cycle variations (time/temperature/pressure) can change resin flow prior to cure, degree of cure, and finished thickness;
+          thickness variation affects consolidation and curing uniformity. [1]
+          (ii) Processing/cure parameters (time–temperature, vacuum/pressure, viscosity/flow) influence porosity, Tg, and surface finish. [3]
+          (iii) Demolding and tool cleaning can cause laminate integrity issues and surface scratches/gouges. [3]
+        </p>
+      </div>
+
+      <h2>13.1 How to troubleshoot SMC defects (method, not guessing)</h2>
+      <ol>
+        <li><strong>Classify the defect</strong>: fill defect, void/porosity, surface/cosmetic, dimensional/warpage, demold damage.</li>
+        <li><strong>Localize it</strong>: where in the part? near end-of-fill, near knit lines, near thickness transitions, near vents?</li>
+        <li><strong>Check the cycle record</strong>: temperature/pressure/time compliance and press curve signature (Ch11).</li>
+        <li><strong>Check tooling condition</strong>: vents, parting line, flash land, release state (Ch09).</li>
+        <li><strong>Check material condition</strong>: storage/out-time/maturity, moisture/volatiles (Ch01).</li>
+        <li><strong>Change one variable at a time</strong> in structured trials or DOE (Ch16).</li>
+      </ol>
+
+      <h2>13.2 Defect catalog (quick index)</h2>
+      <div class="panel">
+        <ul>
+          <li>13.3 Short shot / incomplete fill</li>
+          <li>13.4 Flash / excessive resin bleed</li>
+          <li>13.5 Porosity / pinholes / internal voids</li>
+          <li>13.6 Blisters (often post-paint or post-heat)</li>
+          <li>13.7 Knit line visibility and knit-line weakness</li>
+          <li>13.8 Burn / thermal degradation marks</li>
+          <li>13.9 Warpage / distortion / twist</li>
+          <li>13.10 Surface scratches, gouges, demold damage</li>
+        </ul>
+      </div>
+
+      <h2>13.3 Short shot / incomplete fill</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Likely mechanisms</h3>
+          <ul>
+            <li>viscosity rises too early (tool too hot, material too reactive/mature)</li>
+            <li>insufficient time in low-viscosity window due to close profile</li>
+            <li>insufficient pressure/tonnage for feature filling</li>
+            <li>poor charge placement: excessive flow distance (Ch03)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">What to check</h3>
+          <ul>
+            <li>press force-position curve: early spike suggesting premature sealing or high resistance</li>
+            <li>tool temperature uniformity and setpoint drift</li>
+            <li>charge coverage ratio and placement repeatability</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;">Corrective actions</h3>
+        <ul>
+          <li>increase coverage ratio / redesign charge pattern to reduce flow distance</li>
+          <li>adjust close profile: longer venting stage, different packing timing</li>
+          <li>reduce cure acceleration early (temperature profile), if feasible</li>
+          <li>verify tool vents: blocked vents can create back-pressure and stop flow</li>
+        </ul>
+      </div>
+
+      <h2>13.4 Flash / excessive resin bleed</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Likely mechanisms</h3>
+          <ul>
+            <li>excess charge mass or poor mass distribution</li>
+            <li>flash land/shutoff design or wear (Ch09)</li>
+            <li>pressure too high too early while viscosity is low</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">What to check</h3>
+          <ul>
+            <li>part mass trend and flash mass trend (material loss)</li>
+            <li>tool condition: lands, shutoffs, alignment</li>
+            <li>press curve: unusually low resistance early (too fluid) plus high pressure</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;">Corrective actions</h3>
+        <ul>
+          <li>tighten charge mass tolerance and placement tolerance</li>
+          <li>modify close/pressure schedule: delay full packing pressure until after major flow/venting</li>
+          <li>inspect and rework flash lands/shutoffs if worn</li>
+        </ul>
+      </div>
+
+      <h2>13.5 Porosity / pinholes / internal voids</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Likely mechanisms</h3>
+          <ul>
+            <li>air entrapment due to charge placement sealing pockets (Ch03)</li>
+            <li>blocked/insufficient venting (Ch08–Ch09)</li>
+            <li>insufficient pressure or wrong pressure timing for void collapse</li>
+            <li>volatiles/moisture outgassing during heat-up</li>
+          </ul>
+          <p class="small">
+            The handbook excerpt explicitly links porosity level to time–temperature profile, vacuum/pressure, viscosity/flow. [3]
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">What to check</h3>
+          <ul>
+            <li>vent condition and vent cleaning logs</li>
+            <li>close profile: did vents seal too early?</li>
+            <li>tool temperature uniformity; thick sections and exotherm risk (Ch06) [2]</li>
+            <li>incoming material: storage/out-time, moisture indicators</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;">Corrective actions</h3>
+        <ul>
+          <li>clean/restore vents; add vents at end-of-fill and knit-line regions</li>
+          <li>modify close profile to increase effective venting time before packing</li>
+          <li>adjust vacuum/pressure scheduling where possible</li>
+          <li>stabilize material conditioning and handling (temperature, out-time)</li>
+        </ul>
+      </div>
+
+      <h2>13.6 Blisters (often after painting or post-heat exposure)</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Likely mechanisms</h3>
+          <ul>
+            <li>subsurface voids expand during post-heat</li>
+            <li>volatile/moisture-driven gas generation not fully removed during molding</li>
+            <li>insufficient cure state (low Tg) for paint bake temperature window</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">What to check</h3>
+          <ul>
+            <li>Tg/cure state measurements vs paint bake temperature</li>
+            <li>porosity mapping (cross-sections, CT if available)</li>
+            <li>thermal history: thick-part exotherm peaks (Ch06) [2]</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;">Corrective actions</h3>
+        <ul>
+          <li>tighten porosity controls (Ch08) and venting/close profile controls (Ch10)</li>
+          <li>ensure cure completion targets are met; adjust dwell as needed</li>
+          <li>improve incoming moisture control and handling (Ch01)</li>
+        </ul>
+      </div>
+
+      <h2>13.7 Knit line visibility and knit-line weakness</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Likely mechanisms</h3>
+          <ul>
+            <li>flow fronts meet late when viscosity is high (limited healing)</li>
+            <li>air trapped at the meeting interface</li>
+            <li>charge pattern creates unavoidable front meetings in critical zones (Ch03)</li>
+          </ul>
+          <p class="small">
+            Cure-cycle variability changes resin flow prior to cure and can alter knit-line formation and quality. [1]
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">What to check</h3>
+          <ul>
+            <li>short-shot studies to visualize flow and meeting lines</li>
+            <li>press curve and temperature history: early viscosity rise?</li>
+            <li>vent locations near predicted knit lines</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;">Corrective actions</h3>
+        <ul>
+          <li>move knit lines by changing charge pattern/coverage ratio</li>
+          <li>improve venting and closing profile around meeting fronts</li>
+          <li>adjust temperature profile to preserve low-viscosity time for healing (within cure constraints)</li>
+        </ul>
+      </div>
+
+      <h2>13.8 Burn / thermal degradation marks</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Likely mechanisms</h3>
+          <ul>
+            <li>local overheating due to tool hot spots</li>
+            <li>thick-part exotherm peak leading to high interior temperature [2]</li>
+            <li>excess dwell at high temperature</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">What to check</h3>
+          <ul>
+            <li>tool temperature map; look for zone imbalance</li>
+            <li>embedded thermocouple data during trials (Ch06)</li>
+            <li>color/odor changes localized to thick regions or near heaters</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;">Corrective actions</h3>
+        <ul>
+          <li>reduce hot spots; improve thermal uniformity</li>
+          <li>modify cycle to control exotherm (temperature ramp/dwell changes)</li>
+          <li>validate kinetics/thermal model for thick parts (Ch16)</li>
+        </ul>
+      </div>
+
+      <h2>13.9 Warpage / distortion / twist</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Likely mechanisms</h3>
+          <ul>
+            <li>nonuniform cure and thermal gradients (Ch06)</li>
+            <li>thickness variation changing consolidation/cure uniformity [1]</li>
+            <li>tool constraint and friction during cure/cooldown (Ch14)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">What to check</h3>
+          <ul>
+            <li>thickness map vs deformation map correlation</li>
+            <li>tool temperature nonuniformity</li>
+            <li>demold temperature (too early demold can relax into distortion)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;">Corrective actions</h3>
+        <ul>
+          <li>improve thickness control (Ch07) and thermal uniformity (Ch06)</li>
+          <li>adjust cure completion before demold; consider controlled cooling where feasible</li>
+          <li>review geometry for asymmetric stiffness and thickness transitions</li>
+        </ul>
+      </div>
+
+      <h2>13.10 Surface scratches, gouges, demold damage</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Likely mechanisms</h3>
+          <ul>
+            <li>tool surface contamination or damage</li>
+            <li>insufficient release or incorrect demold timing</li>
+            <li>aggressive tool cleaning practices</li>
+          </ul>
+          <p class="small">
+            Demolding and tool cleaning can cause scratches/gouges and may affect laminate integrity. [3]
+          </p>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">What to check</h3>
+          <ul>
+            <li>tool surface inspection under proper lighting</li>
+            <li>ejection system alignment and pin witness distribution</li>
+            <li>cleaning chemicals and procedures</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;">Corrective actions</h3>
+        <ul>
+          <li>standardize cleaning; avoid abrasive methods that change tool surface</li>
+          <li>restore tool surface finish; repair damaged lands/vent edges</li>
+          <li>optimize demold criteria (cure state + temperature) and release management</li>
+        </ul>
+      </div>
+
+      <h2>13.11 What’s next: residual stress and warpage mechanics</h2>
+      <p>
+        The next chapter develops a mechanics framework for residual stress and warpage driven by cure shrinkage and
+        thermal contraction under tool constraint, and connects it to thickness and thermal nonuniformity discussed earlier.
+      </p>
+
+      <div class="pager">
+        <a href="ch12_surface_cosmetic.html">Prev: Ch12</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch14_residual_stress_warpage.html">Next: Ch14</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 13 — Defects Atlas</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

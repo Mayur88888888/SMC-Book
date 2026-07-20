@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch02 — Process Overview | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 02 — Process Overview</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part I — Process Physics • Chapter 02</div>
+      <h1>Process overview: press stages and manufacturing workflow</h1>
+
+      <h2>2.1 End-to-end workflow (manufacturing “map”)</h2>
+      <ol>
+        <li><strong>Material preparation:</strong> bring SMC to controlled temperature (as required), remove backing films, cut charge patterns.</li>
+        <li><strong>Tool preparation:</strong> verify tool temperature uniformity, cleanliness, vent condition, and release state.</li>
+        <li><strong>Charge placement:</strong> place one or multiple charges into the open heated mold (placement strategy depends on geometry).</li>
+        <li><strong>Mold closing / forming:</strong> the press closes; SMC flows to fill cavities, ribs, bosses; air is expelled through vents/parting line.</li>
+        <li><strong>Cure / dwell:</strong> maintain pressure and temperature until cure reaches a defined state (part-dependent definition).</li>
+        <li><strong>Open / demold:</strong> open mold, eject part, manage handling while hot/green.</li>
+        <li><strong>Trim / finish / inspect:</strong> remove flash, drill/trim, surface finishing/painting, QC inspection.</li>
+      </ol>
+
+      <div class="callout">
+        <strong>Why this workflow is sensitive</strong>
+        <p style="margin:0;">
+          In real manufacturing, temperature and degree of cure change continuously during the cycle,
+          and many properties evolve with them. Therefore, flow, void suppression, cure completion,
+          residual stress/warpage, and surface quality are all coupled to the thermal/pressure history.
+        </p>
+      </div>
+
+      <h2>2.2 Minimal “press molding” sequence (control emphasis)</h2>
+      <p>
+        A baseline press molding practice emphasizes placing material in the cavity, using cure monitoring when needed,
+        and curing in the press while monitoring <strong>pressure, temperature, and time</strong> to ensure the cure cycle parameters
+        are met. This approach is associated with high quality parts and low void content when properly executed. [4]
+      </p>
+
+      <h2>2.3 A stage-based view of the compression molding cycle</h2>
+
+      <h3>Stage A — Pre-contact (approach)</h3>
+      <ul>
+        <li><strong>Key risks:</strong> heat loss from charge, contamination pickup, misplacement.</li>
+        <li><strong>Key controls:</strong> standardized time from film removal to molding; standardized placement pattern.</li>
+      </ul>
+
+      <h3>Stage B — Contact, venting, and early flow</h3>
+      <ul>
+        <li><strong>Goal:</strong> start flow and expel air/volatiles before viscosity rises too much.</li>
+        <li><strong>Key risks:</strong> trapped air → porosity; premature viscosity rise → incomplete fill / knit-line weakness.</li>
+        <li><strong>Controls:</strong> closing speed profile, vent design/maintenance, charge temperature consistency.</li>
+      </ul>
+
+      <h3>Stage C — Filling and packing</h3>
+      <ul>
+        <li><strong>Goal:</strong> fill features fully and densify/consolidate while resin can still accommodate flow and void collapse.</li>
+        <li><strong>Process signature:</strong> press force rises as thickness reduces and resistance to flow increases.</li>
+      </ul>
+
+      <h3>Stage D — Cure under pressure (dwell)</h3>
+      <ul>
+        <li><strong>Goal:</strong> reach target state of cure (degree of cure / Tg proxy) with uniformity through thickness.</li>
+        <li><strong>Key coupling:</strong> cure history affects viscosity, shrinkage, and final properties; for thick sections,
+          exotherm can contribute significantly to temperature, further accelerating cure and changing viscosity. [8]</li>
+      </ul>
+
+      <h3>Stage E — Opening, demolding, and immediate post-cure handling</h3>
+      <ul>
+        <li><strong>Key risks:</strong> surface damage and potential integrity issues from demolding or tool cleaning practices. [3]</li>
+        <li><strong>Controls:</strong> demold temperature window, release management, ejection strategy, operator work instructions.</li>
+      </ul>
+
+      <h2>2.4 Process parameters: what matters, and why</h2>
+      <p>
+        While the details differ by resin system and part geometry, the following parameters repeatedly govern outcomes:
+      </p>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Temperature history</h3>
+          <ul>
+            <li>Controls reaction rate and degree of cure evolution.</li>
+            <li>Strongly affects viscosity and therefore flow and void suppression.</li>
+            <li>Nonuniform temperature → nonuniform cure → warpage and property gradients.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Pressure / force history</h3>
+          <ul>
+            <li>Controls compaction/consolidation and void collapse.</li>
+            <li>Interacts with flow: too low → incomplete fill and porosity; too high → flash and fiber wash/segregation risks.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Time / dwell</h3>
+          <ul>
+            <li>Defines how far cure progresses before demolding.</li>
+            <li>Insufficient dwell can leave incomplete cure; excessive dwell increases cycle time without benefit.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Flow/viscosity state</h3>
+          <ul>
+            <li>Processing conditions (time–temperature, vacuum/pressure, flow/viscosity) influence porosity,
+              Tg, and surface finish quality. [3]</li>
+            <li>Charge condition (maturation/storage) shifts viscosity window even before heating.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>2.5 Cure-cycle variability and thickness variability (why “recipe drift” causes defects)</h2>
+      <p>
+        Cure cycle variations (temperature, pressure, and time) can change resin flow prior to cure, the level of cure,
+        and the finished thickness. Thickness variation in turn affects consolidation and curing uniformity. [1]
+      </p>
+
+      <div class="callout">
+        <strong>Engineering implication</strong>
+        <p style="margin:0;">
+          When you observe a defect (porosity, short shot, warpage, surface pinholes), treat it as a coupled problem:
+          (i) flow/fill, (ii) air removal/void collapse, (iii) cure evolution and thermal gradients.
+          You cannot “fix” porosity by pressure alone if viscosity rises too early; you cannot “fix” short shot by
+          temperature alone if venting and charge placement are wrong.
+        </p>
+      </div>
+
+      <h2>2.6 What “done curing” means (practical definitions)</h2>
+      <ul>
+        <li><strong>Demold-safe:</strong> sufficient stiffness/green strength to eject without distortion or tearing.</li>
+        <li><strong>Dimension-safe:</strong> sufficiently advanced cure that post-demold shrinkage/relaxation is minimized.</li>
+        <li><strong>Performance-safe:</strong> degree of cure / Tg is high enough to meet mechanical/electrical/thermal requirements.</li>
+      </ul>
+      <p class="small">
+        In thick structures, exotherm can accelerate cure in the interior, so “surface temperature reached setpoint” does not guarantee
+        uniform degree of cure through thickness. [8]
+      </p>
+
+      <h2>2.7 What we will quantify next</h2>
+      <ul>
+        <li><strong>Ch03:</strong> flow and charge placement design (coverage ratio, knit-line control, feature filling).</li>
+        <li><strong>Ch04:</strong> viscosity evolution and rheological models (why the flow window closes rapidly with cure).</li>
+        <li><strong>Ch05–Ch06:</strong> cure kinetics + heat transfer (how to predict temperature/DOC histories).</li>
+      </ul>
+
+      <div class="pager">
+        <a href="ch01_smc_fundamentals.html">Prev: Ch01</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch03_flow_and_charge_design.html">Next: Ch03</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 02 — Process Overview</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

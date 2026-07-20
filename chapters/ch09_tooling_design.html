@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch09 — Tooling Design | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 09 — Tooling design</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part II — Tooling, Press, and Control • Chapter 09</div>
+      <h1>Tooling design: vents, shutoffs, flash land, ejection</h1>
+
+      <div class="callout">
+        <strong>Tooling sets the achievable process window</strong>
+        <p style="margin:0;">
+          Many process “fixes” (pressure changes, dwell changes) fail if tooling does not allow proper air evacuation and
+          robust thickness control. Since porosity depends on viscosity/flow and vacuum/pressure scheduling [3],
+          venting features and shutoff design are fundamental—not optional.
+        </p>
+      </div>
+
+      <h2>9.1 Mold architecture for SMC: what must be designed intentionally</h2>
+      <ul>
+        <li><strong>Parting line strategy</strong> (where flash can exist; where vents can live; where cosmetics matter)</li>
+        <li><strong>Shutoffs</strong> (thin features that close early and can seal air paths)</li>
+        <li><strong>Flash land</strong> (controls resin/filler bleed and defines how the cavity seals)</li>
+        <li><strong>Venting network</strong> (where gas escapes during closing/filling)</li>
+        <li><strong>Ejection system</strong> (pins/strippers; cosmetic witness mark management)</li>
+        <li><strong>Thermal system</strong> (heating, cooling, and temperature uniformity)</li>
+      </ul>
+
+      <h2>9.2 Parting line strategy (cosmetic + venting + maintenance)</h2>
+      <p>
+        Choose a parting line to balance:
+      </p>
+      <ul>
+        <li><strong>Cosmetics:</strong> hide the seam/flash where possible; avoid Class-A surfaces.</li>
+        <li><strong>Venting access:</strong> allow vents at far fill points and around likely front-meet regions (Ch08).</li>
+        <li><strong>Trim strategy:</strong> place flash where it can be trimmed reliably without damaging the part.</li>
+        <li><strong>Maintenance:</strong> ensure vents and lands can be cleaned without dismantling the tool excessively.</li>
+      </ul>
+
+      <h2>9.3 Flash land design (why it matters beyond “flash amount”)</h2>
+      <p>
+        The flash land is the region near the parting line that controls how the mold seals and how resin can bleed.
+        It influences:
+      </p>
+      <ul>
+        <li><strong>Air evacuation timing:</strong> the cavity seals when lands close—this defines how long air can escape.</li>
+        <li><strong>Pressure distribution:</strong> too restrictive lands can cause pressure rise before air is removed (porosity risk).</li>
+        <li><strong>Material loss and surface effects:</strong> excessive bleed can alter local fiber/filler content and surface quality.</li>
+      </ul>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Rule-of-thinking (not a numeric rule)</h3>
+        <p style="margin:0;">
+          Treat flash land as a “valve”: it must allow gas out early, then seal robustly for packing and curing.
+          If it seals too early, porosity increases; if it seals too late, flash increases and dimensional control suffers.
+        </p>
+      </div>
+
+      <h2>9.4 Shutoffs: the frequent hidden cause of trapped air</h2>
+      <p>
+        Shutoffs are thin closing regions used to create holes/slots/windows without side actions.
+        They often close early and can seal vents or isolate pockets. Therefore:
+      </p>
+      <ul>
+        <li>Identify shutoffs in the CAD early and map “air trap pockets” they can create.</li>
+        <li>Provide local venting around shutoff traps.</li>
+        <li>Coordinate shutoff closure with closing speed profile and packing (Ch10).</li>
+      </ul>
+
+      <h2>9.5 Venting system design (direct implementation of Ch08)</h2>
+
+      <h3>9.5.1 Vent placement logic</h3>
+      <ul>
+        <li><strong>Farthest fill points</strong> (end-of-fill zones)</li>
+        <li><strong>Likely knit-line regions</strong> (flow fronts meet; trapped gas risk)</li>
+        <li><strong>Deep-draw pockets</strong> and around bosses/ribs where air can remain trapped</li>
+        <li><strong>Symmetry considerations:</strong> avoid biasing flow by venting only one side unless intentionally designed</li>
+      </ul>
+
+      <h3>9.5.2 Vent maintainability</h3>
+      <p>
+        Vents clog over time due to resin bleed, filler buildup, and surface fouling.
+        Since processing parameters influence porosity through flow/viscosity and pressure/vacuum history [3],
+        vent condition becomes a first-order process variable.
+      </p>
+
+      <div class="callout">
+        <strong>Production tip</strong>
+        <p style="margin:0;">
+          Treat vent cleaning frequency as part of the control plan. A “good cycle” can gradually become a “bad cycle”
+          if vents are not maintained—even if the press recipe is unchanged.
+        </p>
+      </div>
+
+      <h2>9.6 Ejection and demolding (tooling must protect surface and integrity)</h2>
+      <p>
+        Demolding and tool cleaning can affect laminate integrity and surface finish (scratches/gouges). [3]
+        Tool design should therefore aim to:
+      </p>
+      <ul>
+        <li>minimize required demold force (release strategy + draft + surface finish + ejection layout)</li>
+        <li>avoid concentrated ejection loads on thin sections or cosmetically critical surfaces</li>
+        <li>provide stable part support during ejection (reduce distortion while hot/green)</li>
+      </ul>
+
+      <h3>9.6.1 Witness marks (cosmetic and functional)</h3>
+      <ul>
+        <li>Pin marks are often unavoidable; place them on non-cosmetic surfaces or in regions later covered/trimmed.</li>
+        <li>For electrical parts, avoid witness marks that create tracking paths or seal failures.</li>
+      </ul>
+
+      <h2>9.7 Thermal system and temperature uniformity provisions</h2>
+      <p>
+        Temperature history strongly influences cure rate and viscosity evolution [2], and processing/cure parameters affect
+        Tg and surface finish. [3] Therefore, tooling must support:
+      </p>
+      <ul>
+        <li><strong>Uniform heating</strong> across the cavity</li>
+        <li><strong>Sensor locations</strong> to measure representative tool temperatures (not just at the platens)</li>
+        <li><strong>Calibration access</strong> so temperature readings remain trustworthy over the tool life</li>
+      </ul>
+
+      <h2>9.8 Tooling design review checklist (SMC-focused)</h2>
+      <div class="panel">
+        <ol>
+          <li><strong>Air trap map:</strong> have you identified all pockets created by geometry/shutoffs and planned vents?</li>
+          <li><strong>Vents:</strong> placed at end-of-fill and knit-line-prone regions; cleanable; compatible with cosmetics.</li>
+          <li><strong>Flash management:</strong> flash land seals at the correct stage; trimming is feasible without damage.</li>
+          <li><strong>Ejection:</strong> balanced, avoids thin sections, minimizes cosmetic witness marks.</li>
+          <li><strong>Thermal:</strong> heating zones support uniform temperature; sensor plan exists.</li>
+          <li><strong>Maintenance:</strong> tool can be cleaned without compromising alignment and surface condition.</li>
+        </ol>
+      </div>
+
+      <h2>9.9 What’s next: press mechanics and cycle design</h2>
+      <p>
+        With tooling defined, the press cycle must be designed to exploit venting and avoid premature sealing.
+        The next chapter covers press tonnage, closing speed profiles, dwell strategies, and how cycle variations affect flow,
+        degree of cure, and thickness. [1]
+      </p>
+
+      <div class="pager">
+        <a href="ch08_porosity_and_venting.html">Prev: Ch08</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch10_press_and_cycle.html">Next: Ch10</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 09 — Tooling Design</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

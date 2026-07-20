@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch08 — Porosity & Venting | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 08 — Porosity mechanisms and venting</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part I — Process Physics • Chapter 08</div>
+      <h1>Porosity: mechanisms, venting, and vacuum/pressure scheduling</h1>
+
+      <div class="callout">
+        <strong>Handbook-anchored takeaway</strong>
+        <p style="margin:0;">
+          Processing parameters such as time–temperature profile, vacuum/pressure, flow rate/viscosity influence
+          porosity level, Tg, and surface finish quality. [3]
+        </p>
+      </div>
+
+      <h2>8.1 Why porosity is the “universal” SMC defect driver</h2>
+      <p>
+        Porosity (voids, microbubbles, pinholes) can degrade:
+      </p>
+      <ul>
+        <li><strong>Cosmetic quality:</strong> surface pinholes, paint pop, orange peel, waviness amplification.</li>
+        <li><strong>Structural performance:</strong> reduced compressive strength, interlaminar properties, fatigue life; enhanced scatter.</li>
+        <li><strong>Electrical reliability:</strong> local dielectric weakness and moisture pathways.</li>
+      </ul>
+      <p>
+        Porosity in SMC molding is not “one mechanism.” It is the net result of (i) gas generation/entrapment,
+        (ii) gas transport/venting, and (iii) void collapse/dissolution before gelation/viscosity rise stops the process.
+      </p>
+
+      <h2>8.2 Porosity sources (mechanism catalog)</h2>
+
+      <h3>8.2.1 Entrapped air due to charge placement and flow sealing</h3>
+      <ul>
+        <li>Charge islands can trap air pockets when mold closes (Ch03).</li>
+        <li>Flow fronts can enclose air as they merge (knit lines/weld lines).</li>
+        <li>Premature sealing at parting lines or shutoffs blocks escape paths.</li>
+      </ul>
+
+      <h3>8.2.2 Volatiles and moisture-driven gas generation</h3>
+      <ul>
+        <li>Moisture can vaporize during heat-up and create internal gas pressure.</li>
+        <li>Low molecular weight components can volatilize depending on temperature and chemistry.</li>
+        <li>Electrical/FR grades may include additives that change volatile behavior; control incoming storage and drying protocols as needed.</li>
+      </ul>
+
+      <h3>8.2.3 Gas expansion due to temperature rise and exotherm</h3>
+      <p>
+        Heat transfer and cure are coupled; in thick parts, exotherm can raise interior temperature significantly, which can
+        increase gas pressure and porosity risk if venting and pressure scheduling are not robust. [2]
+      </p>
+
+      <h2>8.3 Gas transport and “void removal” pathways</h2>
+      <p>
+        In press molding, gas can be removed by:
+      </p>
+      <ul>
+        <li><strong>Venting to atmosphere</strong> through vents/parting line</li>
+        <li><strong>Vacuum assistance</strong> (when tooling allows and process is designed for it)</li>
+        <li><strong>Compression/collapse</strong> of voids under pressure</li>
+        <li><strong>Dissolution/absorption</strong> into the liquid phase (chemistry-dependent; often limited in practice as viscosity increases)</li>
+      </ul>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">SMC-specific reality check</h3>
+        <ul>
+          <li>Vent paths must remain open long enough to remove air before packing seals the cavity edges.</li>
+          <li>Once viscosity rises (Ch04) and gelation occurs (Ch05), voids are increasingly “frozen in.”</li>
+        </ul>
+      </div>
+
+      <h2>8.4 The porosity process window (flow/viscosity vs pressure)</h2>
+      <p>
+        The handbook excerpt explicitly connects porosity to time–temperature profile, vacuum/pressure, and viscosity/flow. [3]
+        Use the following window concept:
+      </p>
+      <ol>
+        <li><strong>Early:</strong> viscosity low → easy flow, easy air transport. Pressure helps collapse voids but may also drive flash if too high.</li>
+        <li><strong>Mid:</strong> filling completes, packing begins. Maintain vents until air removal is complete.</li>
+        <li><strong>Late:</strong> viscosity high / near gel → gas cannot escape; pressure can no longer eliminate all voids effectively.</li>
+      </ol>
+
+      <h2>8.5 Venting design principles (what the tooling must do)</h2>
+      <ul>
+        <li><strong>Provide distributed vent locations</strong> at farthest fill points and around knit-line-prone regions.</li>
+        <li><strong>Prevent vent clogging</strong> (resin bleed, filler buildup). Tool maintenance is part of porosity control.</li>
+        <li><strong>Use vent depth/land design</strong> that allows air removal without excessive resin loss (flash/bleed).</li>
+        <li><strong>Coordinate with ejection and cosmetics:</strong> vents can imprint or create witness marks; plan location carefully.</li>
+      </ul>
+
+      <h2>8.6 Vacuum and pressure scheduling (control logic)</h2>
+      <p>
+        If vacuum is available and compatible with part and tool design, it can reduce initial trapped gas.
+        Pressure scheduling then drives compaction and void collapse.
+      </p>
+      <div class="panel">
+        <h3 style="margin-top:0;">Generic scheduling strategy (conceptual)</h3>
+        <ol>
+          <li><strong>Close to “near-contact”</strong> while allowing air to evacuate (vents open).</li>
+          <li><strong>Apply pressure progressively</strong> to promote flow and pack, while ensuring vent paths are not sealed too early.</li>
+          <li><strong>Full pressure dwell</strong> during cure after air removal is complete.</li>
+        </ol>
+      </div>
+      <p class="small">
+        In practice, the correct schedule depends on geometry, charge pattern (Ch03), and viscosity evolution (Ch04).
+      </p>
+
+      <h2>8.7 Diagnostics: how to tell which porosity mechanism you have</h2>
+
+      <h3>8.7.1 Symptoms and signatures</h3>
+      <ul>
+        <li><strong>Surface pinholes clustered near far fill points:</strong> venting/air removal problem; possibly sealing too early.</li>
+        <li><strong>Blisters after painting or post-heat:</strong> volatile/moisture-driven gas expansion; cure state and Tg may be involved.</li>
+        <li><strong>Porosity bands near knit lines:</strong> air trapped at meeting fronts; charge placement and closing profile issues.</li>
+        <li><strong>Porosity correlates with thickness:</strong> thermal gradient + exotherm + local viscosity rise timing; coupled thermal problem (Ch06, Ch07).</li>
+      </ul>
+
+      <h3>8.7.2 Measurements (from simplest to strongest)</h3>
+      <ul>
+        <li>Mass and thickness mapping (density proxy)</li>
+        <li>Visual inspection (surface pinholes, cut-and-polish microscopy)</li>
+        <li>Ultrasonic C-scan (if applicable; may be limited for chopped SMC)</li>
+        <li>Micro-CT (best for 3D void mapping, but cost/time)</li>
+      </ul>
+
+      <h2>8.8 Porosity prevention checklist (production control)</h2>
+      <ol>
+        <li><strong>Charge control:</strong> placement pattern standardized, coverage ratio stable, no contamination.</li>
+        <li><strong>Tool control:</strong> vents clean, parting line conditions verified, release state controlled.</li>
+        <li><strong>Cycle control:</strong> temperature/pressure/time repeatable; remember cure-cycle variations affect flow and finished thickness. [1]</li>
+        <li><strong>Thermal control:</strong> map tool temperatures; thick parts require exotherm awareness. [2]</li>
+        <li><strong>Demolding discipline:</strong> avoid surface/integrity damage during demolding and tool cleaning. [3]</li>
+      </ol>
+
+      <h2>8.9 What’s next: tooling design details</h2>
+      <p>
+        The next chapter formalizes tooling design for SMC: parting lines, vents, flash land, shutoffs, and ejection.
+        These details are essential to implement the venting and air-evacuation principles developed here.
+      </p>
+
+      <div class="pager">
+        <a href="ch07_compaction_thickness.html">Prev: Ch07</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch09_tooling_design.html">Next: Ch09</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 08 — Porosity & Venting</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

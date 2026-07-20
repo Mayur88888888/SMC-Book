@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch04 — Rheology | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 04 — Rheology and Viscosity Evolution</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part I — Process Physics • Chapter 04</div>
+      <h1>Rheology and viscosity evolution during cure</h1>
+
+      <div class="callout">
+        <strong>Core idea</strong>
+        <p style="margin:0;">
+          SMC flow depends on an evolving viscosity governed by temperature and cure advancement.
+          Early in the cycle, heat reduces viscosity and promotes flow; as reaction proceeds, viscosity rises rapidly
+          due to cross-link network formation. [2][5]
+        </p>
+      </div>
+
+      <h2>4.1 Why viscosity control is central in thermoset SMC</h2>
+      <p>
+        In thermoset molding, you must accomplish:
+      </p>
+      <ol>
+        <li><strong>Filling and air evacuation</strong> while viscosity is sufficiently low.</li>
+        <li><strong>Consolidation/void collapse</strong> under pressure before the resin becomes too “solid-like.”</li>
+        <li><strong>Cure completion</strong> to reach target properties (often tracked through Tg or degree of cure).</li>
+      </ol>
+      <p>
+        The processing window closes because viscosity increases strongly as the polymer network forms.
+        This is why changes in the cure cycle (temperature/pressure/time) can change resin flow prior to cure and final outcomes. [1]
+      </p>
+
+      <h2>4.2 Qualitative viscosity evolution during a press cycle</h2>
+      <p>
+        A typical thermoset cycle produces the following pattern:
+      </p>
+      <ul>
+        <li><strong>Heat-up / early stage:</strong> viscosity decreases with temperature (flow becomes easier).</li>
+        <li><strong>Reaction acceleration:</strong> viscosity begins rising as crosslink density increases.</li>
+        <li><strong>Approach to gelation:</strong> viscosity becomes very large; flow becomes severely restricted.</li>
+        <li><strong>Post-gel:</strong> the material behaves increasingly like a viscoelastic solid.</li>
+      </ul>
+      <p class="small">
+        The excerpted processing text explicitly states that as the reaction progresses, viscosity increases exponentially due to cross-link network formation. [2]
+      </p>
+
+      <h2>4.3 Viscosity models used in process simulation and control</h2>
+      <p>
+        Many phenomenological viscosity models exist to link viscosity to temperature and cure state. One widely used form is the
+        <strong>Castro–Macosko</strong> model, chosen in the excerpt for its versatility. [5]
+      </p>
+
+      <h3>4.3.1 A cure-dependent viscosity form (as given in the excerpt)</h3>
+      <p>
+        A representative functional relationship for viscosity is: [6]
+      </p>
+      <pre>
+eta(T, a) = eta0(T) * ( ag / (ag - a) )^(A + B*a)
+</pre>
+      <p>
+        where:
+      </p>
+      <ul>
+        <li><code>eta(T, a)</code> is viscosity (process apparent viscosity)</li>
+        <li><code>a</code> is degree of cure (0 to 1)</li>
+        <li><code>ag</code> is degree of cure at gelation (model parameter)</li>
+        <li><code>A, B</code> are phenomenological coefficients (fit from data)</li>
+        <li><code>eta0(T)</code> is a reference viscosity term capturing temperature dependence</li>
+      </ul>
+
+      <h3>4.3.2 Arrhenius temperature dependence for the reference viscosity</h3>
+      <p>
+        The excerpt provides an Arrhenius dependence for the reference viscosity term: [6]
+      </p>
+      <pre>
+eta0(T) = C * exp( Ea / (R*T) )
+</pre>
+      <p>
+        where <code>Ea</code> is an activation energy, <code>R</code> is the universal gas constant, and <code>T</code> is absolute temperature.
+        (The excerpt includes a reference temperature notation; your implementation may use equivalent parameterizations.)
+      </p>
+
+      <div class="callout">
+        <strong>Interpretation for SMC engineers</strong>
+        <p style="margin:0;">
+          This structure captures two essential truths: (i) heating reduces viscosity initially (increasing flow),
+          but (ii) as cure advances toward gelation, viscosity rises sharply and effectively freezes the flow.
+          Therefore, if gelation/vitrification occur before filling/impregnation, the result can be incomplete impregnation or incomplete fill. [7]
+        </p>
+      </div>
+
+      <h2>4.4 Gelation and vitrification (process “phase changes”)</h2>
+      <p>
+        As cure advances, a crosslink network forms. The polymer passes through a gelation phase where it transitions toward viscoelastic behavior. [3]
+        Additionally, the instantaneous glass transition temperature increases as the network grows; vitrification occurs when Tg exceeds the laminate temperature. [7]
+      </p>
+      <ul>
+        <li><strong>Before gelation:</strong> material can flow and redistribute (most filling should occur here).</li>
+        <li><strong>Near/after gelation:</strong> flow becomes limited; pressure mainly drives compaction/void collapse and stress development.</li>
+        <li><strong>After vitrification:</strong> mobility is strongly limited; further cure can become diffusion-limited (system-dependent).</li>
+      </ul>
+      <p class="small">
+        The excerpt warns that if gelation or vitrification occur before completion of mold filling and preform impregnation,
+        the laminate will not be fully impregnated. [7]
+      </p>
+
+      <h2>4.5 Building an SMC “flow window map” (practical method)</h2>
+      <p>
+        Even without full constitutive modeling, you can build a practical process map:
+      </p>
+      <ol>
+        <li><strong>Measure viscosity evolution</strong> for your SMC at relevant temperatures (isothermal or ramp).</li>
+        <li><strong>Determine gelation time/degree of cure proxy</strong> (rheology crossover, DMA, or DSC-based criteria).</li>
+        <li><strong>Define minimum required flow time</strong> for your geometry and charge coverage ratio (from trials or simulation).</li>
+        <li><strong>Set the cycle</strong> so required fill/venting finishes with margin before viscosity rise makes flow unstable.</li>
+      </ol>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Production-friendly surrogates (when lab rheology is limited)</h3>
+        <ul>
+          <li>Instrument press: track force–position–time during closing; compare to a “golden curve” baseline (Ch11).</li>
+          <li>Short-shot series: intentionally reduce charge mass to visualize flow paths and meet lines.</li>
+          <li>Part mass/thickness mapping: detect drift in flow and flash formation.</li>
+        </ul>
+      </div>
+
+      <h2>4.6 How rheology links to porosity and surface finish</h2>
+      <p>
+        Processing parameters influence porosity, Tg, and surface finish through their impact on flow/viscosity and cure history. [3]
+        In practice:
+      </p>
+      <ul>
+        <li>If viscosity becomes high too early, air cannot escape and voids cannot collapse effectively.</li>
+        <li>If viscosity is too low too long under high pressure, you may increase flash and fiber wash/segregation risks.</li>
+        <li>Surface defects (pinholes, flow marks) often correlate with air management and viscosity state near the surface.</li>
+      </ul>
+
+      <h2>4.7 What’s next: kinetics (how to compute a(t), then eta(t))</h2>
+      <p>
+        This chapter treated viscosity as a function of temperature and degree of cure.
+        The next chapter develops degree of cure modeling and the key transitions (gelation/vitrification) and Tg evolution.
+      </p>
+
+      <div class="pager">
+        <a href="ch03_flow_and_charge_design.html">Prev: Ch03</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch05_cure_kinetics.html">Next: Ch05</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 04 — Rheology</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

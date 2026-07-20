@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch06 — Heat Transfer & Exotherm | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 06 — Heat transfer and exotherm</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part I — Process Physics • Chapter 06</div>
+      <h1>Heat transfer and exotherm: thermal gradients and thick parts</h1>
+
+      <div class="callout">
+        <strong>Key coupling (must be understood to avoid surprises)</strong>
+        <p style="margin:0;">
+          In thick structures, the heat of reaction may contribute significantly to resin temperature, which in turn affects
+          degree of cure and viscosity. This feedback makes it difficult to predict behavior under new temperature profiles
+          without a model. [2]
+        </p>
+      </div>
+
+      <h2>6.1 Why temperature uniformity is difficult in compression molding</h2>
+      <p>
+        In SMC compression molding, the mold surfaces are typically heated and drive heat into the charge primarily by conduction.
+        However, temperature uniformity can be compromised by:
+      </p>
+      <ul>
+        <li>finite thermal diffusivity (interior lags surface)</li>
+        <li>tool temperature nonuniformity (heater zoning, platen gradients)</li>
+        <li>thermal contact resistance at the tool/SMC interface</li>
+        <li>reaction heat generation (exotherm) inside the composite, especially in thick parts [2]</li>
+        <li>material variability (filler/fiber content affects k, cp, density)</li>
+      </ul>
+
+      <h2>6.2 Governing energy balance (with cure heat)</h2>
+      <p>
+        A standard thermochemical heat transfer model for a curing thermoset composite is:
+      </p>
+      <pre>
+rho * cp * dT/dt = div( k * grad(T) ) + rho * Hr * (da/dt)
+</pre>
+      <p>
+        where:
+      </p>
+      <ul>
+        <li><code>rho</code> is density</li>
+        <li><code>cp</code> is specific heat</li>
+        <li><code>k</code> is thermal conductivity (tensor in general)</li>
+        <li><code>Hr</code> is total heat of reaction per unit mass (or per unit resin mass depending on definition)</li>
+        <li><code>a</code> is degree of cure, governed by a kinetic model <code>da/dt = f(a,T)</code> (Ch05)</li>
+      </ul>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">What this equation is telling you (engineering interpretation)</h3>
+        <ul>
+          <li>The temperature field is driven by both <strong>tool heating</strong> (conduction) and <strong>internal heat generation</strong> (exotherm).</li>
+          <li>Because <code>da/dt</code> depends on <code>T</code>, the exotherm term can create positive feedback in thick parts.</li>
+          <li>Since viscosity depends on <code>T</code> and <code>a</code> (Ch04), the thermal field indirectly controls filling and void suppression.</li>
+        </ul>
+      </div>
+
+      <h2>6.3 Boundary conditions in a heated mold</h2>
+      <p>
+        Typical boundary descriptions (conceptual):
+      </p>
+      <ul>
+        <li><strong>Prescribed tool surface temperature:</strong> mold surfaces held near a setpoint (idealization).</li>
+        <li><strong>Heat flux boundary:</strong> if heater power is controlled rather than temperature.</li>
+        <li><strong>Thermal contact resistance:</strong> imperfect contact early in closing and at flash/parting features can reduce heat transfer.</li>
+      </ul>
+
+      <h3>6.3.1 Contact resistance is process dependent</h3>
+      <p>
+        In early stages, the SMC may not fully contact the mold surface uniformly due to trapped air, local thickness variations,
+        and evolving pressure. Thus, the boundary heat transfer evolves during the closing/packing stage.
+      </p>
+
+      <h2>6.4 Thick-part exotherm: why the interior can run hotter than the mold</h2>
+      <p>
+        The excerpt explicitly notes that in thick structures, reaction heat can significantly contribute to resin temperature,
+        affecting both cure and viscosity. [2] This has several consequences:
+      </p>
+      <ul>
+        <li><strong>Interior temperature overshoot:</strong> centerline temperature may exceed tool surface temperature.</li>
+        <li><strong>Nonuniform degree of cure:</strong> faster interior cure can occur compared with near-surface regions (depending on boundary conditions).</li>
+        <li><strong>Property gradients:</strong> Tg, shrinkage, and residual stresses can vary through thickness.</li>
+        <li><strong>Defect risk:</strong> trapped volatiles can expand more under a hotter interior, aggravating porosity/blister risk (Ch08).</li>
+      </ul>
+
+      <h2>6.5 Why “setpoint temperature” is not the same as “part temperature history”</h2>
+      <p>
+        Tool temperature control ensures a boundary condition, not necessarily the internal temperature history.
+        Because the cure rate depends strongly on temperature and cure state evolves nonlinearly [2],
+        modest tool temperature deviations or part thickness changes can produce large changes in:
+      </p>
+      <ul>
+        <li>time to gelation (end of significant flow)</li>
+        <li>time to vitrification (mobility restriction)</li>
+        <li>peak temperature and time at peak (controls side reactions, porosity, degradation risk)</li>
+      </ul>
+
+      <h2>6.6 A minimal “thermal verification” plan for molding trials</h2>
+      <p>
+        Even if you do not yet run full simulations, you can reduce surprises by instrumented trials:
+      </p>
+      <ol>
+        <li><strong>Map tool surface temperatures</strong> at multiple points (top/bottom halves).</li>
+        <li><strong>Embed thermocouples</strong> in the part (as allowed) to capture through-thickness thermal lag and any exotherm peak.</li>
+        <li><strong>Correlate temperature traces with defects</strong> (porosity, blistering, surface pinholes, warpage).</li>
+        <li><strong>Use the data to calibrate a simple 1D conduction + exotherm model</strong> (sufficient for many thickness-driven issues).</li>
+      </ol>
+
+      <h2>6.7 Coupling back to viscosity and porosity</h2>
+      <p>
+        The excerpt emphasizes that process parameters and thermal history affect degree of cure and viscosity [2],
+        and that processing conditions influence porosity and Tg. [3] In practice:
+      </p>
+      <ul>
+        <li>Hotter regions cure faster → viscosity rises earlier → flow stops earlier → greater risk of incomplete fill locally.</li>
+        <li>Regions with delayed heating remain low-viscosity longer → may over-flow and flash under pressure.</li>
+        <li>Nonuniform cure → nonuniform shrinkage → warpage (Ch14).</li>
+      </ul>
+
+      <h2>6.8 What’s next: compaction and thickness control</h2>
+      <p>
+        The next chapter focuses on compaction/consolidation mechanics and thickness control, and explicitly links thickness variation
+        to consolidation and curing uniformity as highlighted in the handbook excerpt. [1]
+      </p>
+
+      <div class="pager">
+        <a href="ch05_cure_kinetics.html">Prev: Ch05</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch07_compaction_thickness.html">Next: Ch07</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 06 — Heat Transfer & Exotherm</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>
