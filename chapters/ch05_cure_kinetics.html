@@ -57,9 +57,36 @@
       </p>
       <pre>
 a(t) = (released heat up to time t) / (total reaction heat)
-</pre>
+      </pre>
       <p>
         Practically, you obtain the total heat of reaction from a fully curing DSC experiment and compute instantaneous conversion from partial heat release.
+      </p>
+
+      <h3>5.2.1 Representative DOC vs time at different temperatures</h3>
+      <div class="chart-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360">
+          <rect width="720" height="360" fill="#f8fafc"/>
+          <text x="360" y="24" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#111">Degree of cure vs time at different mold temperatures</text>
+          <line x1="60" y1="40" x2="60" y2="320" stroke="#555" stroke-width="1.5"/>
+          <line x1="60" y1="320" x2="680" y2="320" stroke="#555" stroke-width="1.5"/>
+          <text x="40" y="180" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#555" transform="rotate(-90 40 180)">Degree of cure (α)</text>
+          <text x="360" y="345" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#555">Time (s)</text>
+          <polyline points="100,300 160,280 220,240 280,180 340,120 400,80 460,50 520,35 580,28 640,24" fill="none" stroke="#0b57d0" stroke-width="2.5" stroke-linejoin="round"/>
+          <polyline points="100,310 160,300 220,280 280,240 340,190 400,150 460,120 520,100 580,85 640,78" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linejoin="round"/>
+          <polyline points="100,315 200,310 300,300 400,280 500,250 600,220 660,205" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linejoin="round"/>
+          <text x="600" y="22" font-family="system-ui, sans-serif" font-size="10" fill="#0b57d0">170 °C (fast)</text>
+          <text x="600" y="76" font-family="system-ui, sans-serif" font-size="10" fill="#d97706">150 °C (medium)</text>
+          <text x="600" y="200" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626">130 °C (slow)</text>
+          <line x1="60" y1="320" x2="40" y2="320" stroke="#555" stroke-width="1"/>
+          <text x="35" y="324" font-family="system-ui, sans-serif" font-size="9" text-anchor="end" fill="#555">0</text>
+          <line x1="60" y1="160" x2="40" y2="160" stroke="#555" stroke-width="1"/>
+          <text x="35" y="164" font-family="system-ui, sans-serif" font-size="9" text-anchor="end" fill="#555">0.5</text>
+          <line x1="60" y1="40" x2="40" y2="40" stroke="#555" stroke-width="1"/>
+          <text x="35" y="44" font-family="system-ui, sans-serif" font-size="9" text-anchor="end" fill="#555">1.0</text>
+        </svg>
+      </div>
+      <p class="small">
+        Conceptual curves only. Actual DOC trajectories depend on formulation, thickness, and heat-transfer conditions (Ch06).
       </p>
 
       <h2>5.3 Cure kinetics: what a “kinetic model” does</h2>

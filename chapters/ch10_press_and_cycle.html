@@ -131,6 +131,27 @@
         <li><strong>Validate with instrumentation</strong> (tool temperatures, press curves; Ch11).</li>
       </ol>
 
+      <h3>10.7.1 Typical press force–displacement signature</h3>
+      <div class="chart-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360">
+          <rect width="720" height="360" fill="#f8fafc"/>
+          <text x="360" y="24" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#111">Typical press force vs displacement during SMC molding</text>
+          <line x1="80" y1="40" x2="80" y2="320" stroke="#555" stroke-width="1.5"/>
+          <line x1="80" y1="320" x2="660" y2="320" stroke="#555" stroke-width="1.5"/>
+          <text x="40" y="180" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#555" transform="rotate(-90 40 180)">Press force (kN)</text>
+          <text x="360" y="345" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#555">Mold displacement (mm)</text>
+          <polyline points="80,300 140,295 200,285 260,270 300,250 340,220 380,185 420,145 460,110 500,85 540,68 580,55 620,48 660,42" fill="none" stroke="#0b57d0" stroke-width="2.5" stroke-linejoin="round"/>
+          <text x="180" y="275" font-family="system-ui, sans-serif" font-size="10" fill="#0b57d0">Approach / air escape</text>
+          <text x="420" y="175" font-family="system-ui, sans-serif" font-size="10" fill="#0b57d0">Packing / densification</text>
+          <text x="580" y="68" font-family="system-ui, sans-serif" font-size="10" fill="#0b57d0">Cure stiffening</text>
+          <line x1="300" y1="320" x2="300" y2="250" stroke="#d97706" stroke-width="1" stroke-dasharray="4,2"/>
+          <text x="310" y="270" font-family="system-ui, sans-serif" font-size="9" fill="#d97706">Vent seal zone</text>
+        </svg>
+      </div>
+      <p class="small">
+        Signature shape varies with charge pattern, tooling, and material maturity. Golden curves lock in a known-good baseline (Ch11).
+      </p>
+
       <h2>10.8 Documentation and traceability</h2>
       <p>
         A disciplined manufacturing system records and maintains the time–temperature–pressure histories for traceability and conformance.

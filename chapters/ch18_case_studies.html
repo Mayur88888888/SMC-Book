@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch18 — Case Studies | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 18 — Case studies: automotive, truck, and aerospace</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part IV — Simulation and Industrialization • Chapter 18</div>
+      <h1>Case studies: automotive, truck, and aerospace applications</h1>
+
+      <div class="callout">
+        <strong>How to read this chapter</strong>
+        <p style="margin:0;">
+          Each case study ties formulation, process design, tooling, and control decisions to measurable outcomes.
+          The diagrams are conceptual representations of SMC part families; actual part geometry varies by OEM.
+        </p>
+      </div>
+
+      <h2>18.1 Automotive Class A body panel (sedan front fender)</h2>
+      <p>
+        A high-volume sedan fender requires Class A surface, paintability, dimensional stability,
+        and impact resistance. The engineering challenge is balancing low shrinkage (surface quality)
+        with sufficient flow to fill complex geometry.
+      </p>
+
+      <h3>Application overview: automotive</h3>
+      <figure>
+        <img src="../assets/smc-car.svg" alt="SMC automotive parts: hood panel, roof structure, fender liner, B-pillar, front end module, trunk lid" class="figure-image" />
+        <figcaption class="figure-caption">SMC in automotive segments: Class A body panels, structural closures, under-hood components, and hybrid carbon/glass nodes.</figcaption>
+      </figure>
+
+      <h3>Formulation choice</h3>
+      <ul>
+        <li>Resin: Isophthalic UPR with high LPA package (PVAc, 10 phr)</li>
+        <li>Styrene: 30 phr (reduced for emissions)</li>
+        <li>Initiator: Dual TBPEH + TBPB for staged cure</li>
+        <li>Fiber: 20% chopped E-glass, 12.5 mm, fine tex</li>
+        <li>Filler: Fine-ground CaCO₃ (60 phr)</li>
+      </ul>
+
+      <h3>Process design</h3>
+      <ul>
+        <li>Tool: Class A polished steel; parting line at fender edge (trimmed later)</li>
+        <li>Charge: single central charge with 1.15 coverage ratio</li>
+        <li>Close profile: fast approach → 2 s vent stage → rapid pack → 120 s dwell at 150 °C</li>
+        <li>Pressure: 8 MPa packing, 12 MPa dwell</li>
+      </ul>
+
+      <h3>Outcomes and controls</h3>
+      <ul>
+        <li>Surface gloss: ≥ 80 GU at 60°</li>
+        <li>Shrinkage: &lt; 0.08% linear (verified by CMM)</li>
+        <li>Porosity: &lt; 0.5% void volume (density method)</li>
+        <li>Impact: ≥ 12 J falling weight (full panel)</li>
+        <li>Control: golden curve monitoring + thickness grid every 50 parts</li>
+      </ul>
+
+      <h2>18.2 Automotive structural component (B-pillar reinforcement)</h3>
+      <p>
+        A B-pillar inner reinforcement must absorb crash energy, resist intrusion, and maintain dimensional
+        accuracy for door alignment. Surface finish is secondary but must not have sharp porosity.
+      </p>
+
+      <h3>Formulation choice</h3>
+      <ul>
+        <li>Resin: Hybrid epoxy-VE or high-temp DCPD-UPR</li>
+        <li>Fiber: 30% chopped S-2 glass (25 mm) or 20% carbon + 20% glass hybrid</li>
+        <li>No LPA (shrinkage tolerated in hidden zone)</li>
+        <li>Higher thickener level for green strength during handling</li>
+      </ul>
+
+      <h3>Process design</h3>
+      <ul>
+        <li>Tool: shutoffs for hinge and latch features; vent at rib ends</li>
+        <li>Charge: multi-point placement to fill ribs without excessive flow</li>
+        <li>Close profile: moderate speed; venting stage prioritized</li>
+        <li>Cure: 160 °C, 150 s dwell; embedded thermocouple for exotherm monitoring</li>
+      </ul>
+
+      <h3>Outcomes and controls</h3>
+      <ul>
+        <li>Flexural strength: ≥ 150 MPa</li>
+        <li>Compression after impact: ≥ 120 MPa</li>
+        <li>Thickness tolerance: ± 0.15 mm on critical mounting features</li>
+        <li>Control: DOE-optimized charge pattern; press force-position golden curve</li>
+      </ul>
+
+      <h2>18.3 Heavy-duty truck (aerodynamic side fairing)</h2>
+      <p>
+        A 1.2 m × 0.4 m aerodynamic fairing for a Class 8 truck must survive 10+ years of road
+        exposure, resist stone impact, and reduce drag. It is a large, thin, cosmetic-exposed part.
+      </p>
+
+      <h3>Application overview: heavy-duty truck</h3>
+      <figure>
+        <img src="../assets/smc-truck.svg" alt="SMC heavy-duty truck parts: aerodynamic fairings, cab floor, fuel tank shield, battery enclosure, trailer front end, under-body shield" class="figure-image" />
+        <figcaption class="figure-caption">SMC in commercial vehicles: aerodynamic fairings, structural protections, EV battery enclosures, and under-body shields.</figcaption>
+      </figure>
+
+      <h3>Formulation choice</h3>
+      <ul>
+        <li>Resin: DCPD-modified UPR (good surface, lower cost than iso-UPR)</li>
+        <li>Styrene: 32 phr</li>
+        <li>Initiator: Dual TBPEH + TBPB</li>
+        <li>Filler: 70 phr CaCO₃ (mid-range grind for surface texture)</li>
+        <li>Fiber: 25% chopped E-glass, 25 mm</li>
+        <li>LPA: PMMA (7 phr) for moderate shrinkage control</li>
+        <li>UV stabilizer: Hindered amine light stabilizer (HALS) + UV absorber (1 phr)</li>
+      </ul>
+
+      <h3>Process design</h3>
+      <ul>
+        <li>Tool: large-area heated aluminum; zoned heating for uniformity</li>
+        <li>Charge: two symmetric charges to minimize flow distance</li>
+        <li>Close profile: extended vent stage (4 s) due to large area</li>
+        <li>Cure: 145 °C, 180 s dwell; interior thermocouple to track exotherm</li>
+      </ul>
+
+      <h3>Outcomes and controls</h3>
+      <ul>
+        <li>Surface waviness: &lt; 40 µm on Class A zone</li>
+        <li>Impact: ≥ 25 J falling weight (stone-impact simulation)</li>
+        <li>Weatherability: 3-year Florida exposure with no blistering or fiber show-through</li>
+        <li>Control: thickness CMM every part; surface profilometry on sample plan</li>
+      </ul>
+
+      <h2>18.4 EV battery enclosure (truck / commercial vehicle)</h2>
+      <p>
+        Battery enclosures for heavy-duty EVs must protect against crash, intrusion, thermal runaway,
+        and environmental exposure. They are large, ribbed, and must meet stringent FST requirements.
+      </p>
+
+      <h3>Formulation choice</h3>
+      <ul>
+        <li>Resin: Vinyl Ester or epoxy (superior chemical/thermal resistance)</li>
+        <li>FR package: ATH (30 phr) + Mg(OH)₂ (10 phr)</li>
+        <li>Fiber: 30% chopped E-glass or S-2 glass (25 mm)</li>
+        <li>Filler: 60 phr CaCO₃ + silica blend</li>
+        <li>Thermoplastic modifier: 5 phr for impact</li>
+        <li>Coupling agent: amino silane for VE</li>
+      </ul>
+
+      <h3>Process design</h3>
+      <ul>
+        <li>Tool: rib-intensive design; vents at every rib end; shutoffs for cable ports</li>
+        <li>Charge: multiple small pads near ribs to ensure local fill</li>
+        <li>Close profile: slow vent stage to allow air escape from deep ribs</li>
+        <li>Cure: 170 °C, 300 s dwell; exotherm management critical in 8 mm wall</li>
+      </ul>
+
+      <h3>Outcomes and controls</h3>
+      <ul>
+        <li>UL 94 V-0 achieved at 3.2 mm</li>
+        <li>Compression strength: ≥ 180 MPa</li>
+        <li>Thermal conductivity: 0.25–0.35 W/m·K (filler-dependent)</li>
+        <li>Control: micro-CT porosity audit; thermocouple-based exotherm logging</li>
+      </ul>
+
+      <h2>18.5 Aerospace cabin interior panel (regional jet)</h2>
+      <p>
+        Interior panels must meet FAR 25.853 FST requirements, be lightweight, and integrate
+        with lighting,IFE, and air ducting. Surface finish must be consistent for painting or film application.
+      </p>
+
+      <h3>Application overview: aerospace</h3>
+      <figure>
+        <img src="../assets/smc-aerospace.svg" alt="SMC aerospace parts: radome nose cap, cabin interior panels, secondary structure, drone airframe, satellite structure, UAV wing skin" class="figure-image" />
+        <figcaption class="figure-caption">SMC in aerospace and advanced mobility: radomes, interiors, secondary structures, drones, and satellite components.</figcaption>
+      </figure>
+
+      <h3>Formulation choice</h3>
+      <ul>
+        <li>Resin: Phenolic resol (inherently low smoke, no halogens)</li>
+        <li>Filler: ATH (60 phr) for fire barrier and smoke suppression</li>
+        <li>Fiber: 20% E-glass (12.5 mm) or 15% aramid for lower weight</li>
+        <li>No styrene, no LPA (phenolic cure behavior differs)</li>
+      </ul>
+
+      <h3>Process design</h3>
+      <ul>
+        <li>Tool: low-roughness aluminum; release film or in-mold coating for surface</li>
+        <li>Charge: uniform blanket; no complex flow paths</li>
+        <li>Close profile: moderate speed; careful venting to avoid resin bleed</li>
+        <li>Cure: 160 °C, 240 s dwell; phenolic water byproduct must be vented</li>
+      </ul>
+
+      <h3>Outcomes and controls</h3>
+      <ul>
+        <li>FAR 25.853 pass: 60 s burn &lt; 65 mm, smoke density &lt; 200</li>
+        <li>Density: 1.6–1.7 g/cm³ (lightweight for interior)</li>
+        <li>Flexural strength: 60–80 MPa</li>
+        <li>Control: FST test every resin batch; CMM on mounting features</li>
+      </ul>
+
+      <h2>18.6 Aerospace secondary structure (UAV wing skin)</h2>
+      <p>
+        Unmanned aerial vehicle wing skins demand low weight, high stiffness, and dimensional stability
+        in a wide temperature range. Carbon fiber SMC is an enabling material here.
+      </p>
+
+      <h3>Formulation choice</h3>
+      <ul>
+        <li>Resin: Epoxy with latent hardener (dicyandiamide + imidazole)</li>
+        <li>Fiber: 35% chopped carbon fiber (25 mm) or CF-SMC with aligned tow bands</li>
+        <li>Filler: 30 phr fumed silica for viscosity control</li>
+        <li>Thickener: Urea-based for epoxy</li>
+      </ul>
+
+      <h3>Process design</h3>
+      <ul>
+        <li>Tool: aluminum or Invar for thermal stability; low draft for aerodynamic shape</li>
+        <li>Charge: symmetric placement; foam preform inserts for sandwich cores</li>
+        <li>Close profile: fast then pack; no extended vent stage needed</li>
+        <li>Cure: 180 °C, 600 s dwell; post-cure at 200 °C for 2 h for full Tg development</li>
+      </ul>
+
+      <h3>Outcomes and controls</h3>
+      <ul>
+        <li>Flexural modulus: 35–45 GPa</li>
+        <li>Density: 1.55–1.65 g/cm³</li>
+        <li>CTE: &lt; 15 µm/m·K (matched to carbon)</li>
+        <li>Control: laser scan for warpage; DMA Tg on every batch</li>
+      </ul>
+
+      <h2>18.7 Cross-cutting lessons from the case studies</h2>
+      <div class="panel">
+        <ol>
+          <li><strong>Formulation drives process window:</strong> each resin/fiber/FR combination requires its own close profile, vent strategy, and dwell schedule.</li>
+          <li><strong>No universal “best” charge pattern:</strong> geometry, wall thickness, and feature complexity dictate placement.</li>
+          <li><strong>Instrumentation pays back:</strong> thermocouples in thick parts, golden curves, and post-mold DOC/Tg checks prevent costly field failures.</li>
+          <li><strong>Qualification must be application-specific:</strong> Class A panels need gloss/DOI; structural parts need impact/CAI; interiors need FST.</li>
+          <li><strong>Scale-up is not linear:</strong> doubling thickness changes heat-up time by 4× and exotherm behavior dramatically.</li>
+        </ol>
+      </div>
+
+      <div class="pager">
+        <a href="ch17_advanced_formulations.html">Prev: Ch17</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch00_preface.html">Start: Preface</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 18 — Case Studies</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

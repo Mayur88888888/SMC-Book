@@ -104,6 +104,33 @@ rho * cp * dT/dt = div( k * grad(T) ) + rho * Hr * (da/dt)
         <li><strong>Defect risk:</strong> trapped volatiles can expand more under a hotter interior, aggravating porosity/blister risk (Ch08).</li>
       </ul>
 
+      <h3>6.4.1 Conceptual through-thickness temperature profile with exotherm</h3>
+      <div class="chart-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360">
+          <rect width="720" height="360" fill="#f8fafc"/>
+          <text x="360" y="24" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#111">Through-thickness temperature during thick-part cure</text>
+          <line x1="80" y1="40" x2="80" y2="320" stroke="#555" stroke-width="1.5"/>
+          <line x1="80" y1="320" x2="660" y2="320" stroke="#555" stroke-width="1.5"/>
+          <text x="45" y="180" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#555" transform="rotate(-90 45 180)">Temperature (°C)</text>
+          <text x="360" y="345" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#555">Through-thickness position (surface → core)</text>
+          <line x1="80" y1="80" x2="660" y2="80" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="70" y="84" font-family="system-ui, sans-serif" font-size="9" text-anchor="end" fill="#555">Mold setpoint</text>
+          <polyline points="80,100 180,105 280,115 360,140 440,170 520,110 620,105 660,100" fill="none" stroke="#0b57d0" stroke-width="2.5" stroke-linejoin="round"/>
+          <text x="400" y="155" font-family="system-ui, sans-serif" font-size="10" fill="#0b57d0">Interior overshoot (exotherm)</text>
+          <line x1="360" y1="320" x2="360" y2="140" stroke="#d97706" stroke-width="1" stroke-dasharray="4,2"/>
+          <text x="370" y="160" font-family="system-ui, sans-serif" font-size="9" fill="#d97706">Core peak</text>
+          <line x1="80" y1="100" x2="60" y2="100" stroke="#555" stroke-width="1"/>
+          <text x="55" y="104" font-family="system-ui, sans-serif" font-size="9" text-anchor="end" fill="#555">Setpoint</text>
+          <line x1="80" y1="320" x2="60" y2="320" stroke="#555" stroke-width="1"/>
+          <text x="55" y="324" font-family="system-ui, sans-serif" font-size="9" text-anchor="end" fill="#555">Surface</text>
+          <line x1="660" y1="100" x2="660" y2="320" stroke="#555" stroke-width="1"/>
+          <text x="670" y="210" font-family="system-ui, sans-serif" font-size="9" text-anchor="start" fill="#555">Other surface</text>
+        </svg>
+      </div>
+      <p class="small">
+        Conceptual only. Actual profiles depend on Biot number, reaction kinetics, and mold temperature uniformity (Ch05–Ch06).
+      </p>
+
       <h2>6.5 Why “setpoint temperature” is not the same as “part temperature history”</h2>
       <p>
         Tool temperature control ensures a boundary condition, not necessarily the internal temperature history.
