@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch15 — Testing & Qualification | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 15 — Testing and qualification</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part III — Surface, Defects, Performance • Chapter 15</div>
+      <h1>Testing and qualification: linking process to performance</h1>
+
+      <div class="callout">
+        <strong>Why qualification belongs in a process book</strong>
+        <p style="margin:0;">
+          Without a structured test plan, you cannot distinguish “good part” from “lucky part.”
+          Qualification links process windows (temperature, pressure, time, charge design) to measurable
+          outcomes: porosity, cure state, thickness uniformity, mechanical properties, and surface quality.
+        </p>
+      </div>
+
+      <h2>15.1 The qualification hierarchy</h2>
+      <p>
+        SMC parts span widely different end-use requirements. A single test program cannot serve all.
+        Use this hierarchy to plan sampling and acceptance:
+      </p>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Level 1 — Process conformance</h3>
+          <ul>
+            <li>Press curve compliance (Ch11)</li>
+            <li>Thickness mapping</li>
+            <li>Mass / density uniformity</li>
+            <li>Surface class / porosity rating</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Level 2 — Material / microstructure</h3>
+          <ul>
+            <li>Degree of cure (DSC, DMA Tg)</li>
+            <li>Void content (density, microscopy, CT)</li>
+            <li>Fiber orientation / distribution</li>
+            <li>Filler dispersion</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Level 3 — Mechanical / functional</h3>
+          <ul>
+            <li>Tensile, flexural, compressive strength</li>
+            <li>Interlaminar shear (ILSS)</li>
+            <li>Impact (Charpy / falling weight)</li>
+            <li>Fatigue and creep (structural grades)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Level 4 — Environmental / end-use</h3>
+          <ul>
+            <li>HDT / continuous service temperature</li>
+            <li>Chemical resistance / hydrolysis</li>
+            <li>Flame / smoke / toxicity (FST)</li>
+            <li>Paint adhesion and weathering</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>15.2 Process conformance tests (fast, production-friendly)</h2>
+      <p>
+        These tests should be performed on every production run or on a statistically valid sampling plan.
+        They link directly to the control logic in Ch11.
+      </p>
+
+      <h3>15.2.1 Press signature monitoring</h3>
+      <p>
+        Record and evaluate force-position-time traces against golden curves.
+        Key metrics:
+      </p>
+      <ul>
+        <li>Peak force and position at peak</li>
+        <li>Slope of packing region (indicates flow resistance)</li>
+        <li>Time to reach target force/dwell transition</li>
+        <li>Any early force spikes (venting / sealing anomalies)</li>
+      </ul>
+
+      <h3>15.2.2 Dimensional checks</h3>
+      <ul>
+        <li><strong>Thickness map:</strong> grid measurement (e.g., 5×5 or 10×10 points) to detect wedging or local thin/thick zones</li>
+        <li><strong>Flatness / warpage:</strong> CMM or 3D scan vs nominal CAD (Ch14)</li>
+        <li><strong>Critical feature dimensions:</strong> hole diameters, rib widths, boss heights</li>
+      </ul>
+
+      <h3>15.2.3 Mass and density</h3>
+      <p>
+        Part mass is a rapid proxy for charge mass consistency, flash control, and compaction.
+        Density = mass / measured volume. Compare to theoretical density based on formulation:
+      </p>
+      <pre>
+rho_theoretical = 1 / ( wf/rho_f + wr/rho_r + wc/rho_c )
+      </pre>
+      <p>
+        where w = weight fraction and ρ = component density.
+      </p>
+
+      <h2>15.3 Microstructure and cure-state tests</h2>
+
+      <h3>15.3.1 Degree of cure (DSC)</h3>
+      <p>
+        DSC measures residual heat of reaction. A fully cured sample shows no exotherm on a second heat.
+        Calculate:
+      </p>
+      <pre>
+DOC = 1 - (residual exotherm) / (total exotherm from fully uncured resin)
+      </pre>
+      <p class="small">
+        Typical acceptance: DOC ≥ 0.90–0.95 for structural parts; ≥ 0.85 for non-critical cosmetic parts.
+      </p>
+
+      <h3>15.3.2 Glass transition temperature (DMA / DSC)</h3>
+      <p>
+        Tg is a practical proxy for cure state in production. DMA (storage modulus peak or tan δ peak)
+        is more sensitive than DSC for highly crosslinked systems.
+      </p>
+      <ul>
+        <li><strong>DSC Tg:</strong> midpoint of heat-capacity step</li>
+        <li><strong>DMA Tg:</strong> peak of tan δ (Tgα) or onset of storage modulus drop (Tge)</li>
+        <li>For many SMC grades, Tg should exceed maximum service temperature + 20–40 °C margin</li>
+      </ul>
+
+      <h3>15.3.3 Void content measurement</h3>
+      <div class="grid two">
+        <div class="panel">
+          <h4 style="margin-top:0;">Acid digestion / burn-off</h4>
+          <ul>
+            <li>Dissolve resin in acid; weigh residual fiber</li>
+            <li>Fast and accurate for fiber content</li>
+            <li>Can estimate void content if density known</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4 style="margin-top:0;">Micro-CT scanning</h4>
+          <ul>
+            <li>3D void mapping without sectioning</li>
+            <li>Detects sub-surface pinholes, knit-line voids</li>
+            <li>Best for root-cause analysis; costly for routine</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>15.4 Mechanical property tests</h2>
+      <p>
+        Select mechanical tests based on the failure modes expected in service.
+        Always report test direction relative to flow/fiber orientation.
+      </p>
+
+      <h3>15.4.1 Tensile (ASTM D638 / ISO 527)</h3>
+      <ul>
+        <li>Sensitive to fiber orientation and void content</li>
+        <li>Test both “flow direction” and “transverse” to capture anisotropy</li>
+        <li>Typical range: 40–250 MPa depending on fiber loading and resin</li>
+      </ul>
+
+      <h3>15.4.2 Flexural (ASTM D790 / ISO 178)</h3>
+      <ul>
+        <li>Most common for SMC panel qualification</li>
+        <li>Reflects both matrix and fiber contribution</li>
+        <li>Typical flexural strength: 80–250 MPa; modulus: 8–25 GPa</li>
+      </ul>
+
+      <h3>15.4.3 Compression (ASTM D695 / ISO 604)</h3>
+      <ul>
+        <li>Critical for structural nodes (B-pillars, front-end modules)</li>
+        <li>Sensitive to fiber buckling and void location</li>
+        <li>Test both flat-wise and edge-wise</li>
+      </ul>
+
+      <h3>15.4.4 Impact</h3>
+      <ul>
+        <li><strong>Charpy / Izod (ASTM D256 / ISO 180):</strong> notched and unnotched; measures toughness and crack resistance</li>
+        <li><strong>Falling weight (Dart / Gardner impact):</strong> simulates real impact events; gives energy-to-failure</li>
+        <li>For automotive, falling-weight tests on full panels or sub-structures are often required</li>
+      </ul>
+
+      <h2>15.5 Environmental and durability tests</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Thermal</h3>
+          <ul>
+            <li>HDT per ASTM D648</li>
+            <li>Continuous thermal aging (1000 h at elevated T)</li>
+            <li>Thermal cycling (thermal shock)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Chemical / moisture</h3>
+          <ul>
+            <li>Water absorption (24 h, 7 days, saturation)</li>
+            <li>Immersion in fuel, brake fluid, coolant</li>
+            <li>Salt spray (ASTM B117) for corrosion-prone assemblies</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Fire / smoke / toxicity</h3>
+          <ul>
+            <li>UL 94 (horizontal / vertical burn)</li>
+            <li>LOI (ASTM D2863)</li>
+            <li>NBS smoke chamber (ASTM E662)</li>
+            <li>FAR 25.853 (aircraft cabin materials)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Weathering / UV</h3>
+          <ul>
+            <li>QUV / accelerated weathering (ASTM G154)</li>
+            <li>Florida exposure (natural weathering)</li>
+            <li>Paint adhesion after weathering (cross-cut + tape test)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>15.6 Application-specific qualification plans</h2>
+
+      <h3>15.6.1 Automotive Class A body panel</h3>
+      <ul>
+        <li><strong>Process:</strong> thickness uniformity, mass, surface gloss/DOI, pinhole count</li>
+        <li><strong>Microstructure:</strong> void content &lt; 1–2%, Tg &gt; 110 °C</li>
+        <li><strong>Mechanical:</strong> flexural strength ≥ 100 MPa, impact energy-to-failure per OEM spec</li>
+        <li><strong>Environmental:</strong> paint adhesion, thermal cycling (–40 to +80 °C), humidity resistance</li>
+        <li><strong>Aging:</strong> 6-month outdoor exposure or equivalent QUV; no blistering or fiber print-through</li>
+      </ul>
+
+      <h3>15.6.2 Structural truck / heavy-duty</h3>
+      <ul>
+        <li><strong>Process:</strong> thickness map, mass, porosity rating (ultrasonic or density)</li>
+        <li><strong>Microstructure:</strong> void content &lt; 2%, fiber content ± 2 wt%, Tg &gt; 120 °C</li>
+        <li><strong>Mechanical:</strong> tensile, flexural, compressive, ILSS; impact ≥ 800 J/m notched</li>
+        <li><strong>Environmental:</strong> long-term creep at 60 °C, chemical resistance to road fluids</li>
+      </ul>
+
+      <h3>15.6.3 Aerospace interior / secondary structure</h3>
+      <ul>
+        <li><strong>Process:</strong> tight thickness control, void mapping (micro-CT preferred)</li>
+        <li><strong>Microstructure:</strong> Tg &gt; 150 °C (epoxy SMC), FST compliance verified</li>
+        <li><strong>Mechanical:</strong> compression after impact (CAI), open-hole compression, edge delamination resistance</li>
+        <li><strong>Environmental:</strong> thermal cycling to –55 °C, humidity soak, FST per FAR 25.853</li>
+      </ul>
+
+      <h2>15.7 Sampling and statistics</h2>
+      <p>
+        Qualification is meaningless without a sampling plan. Use the following framework:
+      </p>
+      <ol>
+        <li><strong>Define the population:</strong> by lot, shift, mold, resin batch, or fiber batch</li>
+        <li><strong>Choose sampling frequency:</strong> every part (destructive tests) vs periodic (non-destructive)</li>
+        <li><strong>Use control charts:</strong> X-bar and R charts for thickness, mass, Tg, flexural strength</li>
+        <li><strong>Set action limits:</strong> not just specification limits—define when a trend, not just a point, requires investigation</li>
+        <li><strong>Link to golden curves:</strong> process conformance metrics should correlate with mechanical outcome metrics</li>
+      </ol>
+
+      <h2>15.8 What’s next: simulation and scale-up</h2>
+      <p>
+        The next chapter develops simulation methods and scale-up logic for SMC: thermochemical models,
+        rheology coupling, DOE workflows, and how to translate lab or pilot results to production.
+      </p>
+
+      <div class="pager">
+        <a href="ch14_residual_stress_warpage.html">Prev: Ch14</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch16_simulation_doe_scaleup.html">Next: Ch16</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 15 — Testing & Qualification</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>

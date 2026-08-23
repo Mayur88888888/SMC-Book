@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch16 — Simulation, DOE & Scale-Up | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 16 — Simulation, DOE, scaling, and robustness</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part IV — Simulation and Industrialization • Chapter 16</div>
+      <h1>Simulation, DOE, scaling, and robustness</h1>
+
+      <div class="callout">
+        <strong>Why simulation and DOE matter for SMC</strong>
+        <p style="margin:0;">
+          SMC processing involves coupled physics: heat transfer, chemical reaction, flow, and solid mechanics.
+          Experiments alone cannot cover all combinations of thickness, charge pattern, resin system, and tool design.
+          Simulation + DOE provide a structured path from material data to production recipes.
+        </p>
+      </div>
+
+      <h2>16.1 The coupled physics of SMC compression molding</h2>
+      <p>
+        A complete simulation must resolve interactions among:
+      </p>
+      <ol>
+        <li><strong>Thermochemistry:</strong> energy balance with reaction heat, temperature-dependent kinetics</li>
+        <li><strong>Rheology:</strong> viscosity depends on temperature and degree of cure (Ch04–Ch05)</li>
+        <li><strong>Flow/compaction:</strong> squeeze flow, feature filling, thickness reduction, fiber orientation evolution</li>
+        <li><strong>Solid mechanics:</strong> shrinkage, thermal stress, warpage under tool constraint (Ch14)</li>
+      </ol>
+      <p>
+        The excerpted literature context emphasizes multi-submodel coupling in curing simulations.
+        [10] In practice, you may start with reduced-order models and add complexity as needed.
+      </p>
+
+      <h2>16.2 Minimal modeling set for engineering decisions</h2>
+      <p>
+        If you cannot build a full multiphysics model immediately, the minimum set that improves robustness is:
+      </p>
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Thermochemical model</h3>
+          <ul>
+            <li>1D conduction + reaction heat generation</li>
+            <li>Predicts interior temperature and DOC history</li>
+            <li>Input: cp, k, Hr, kinetic parameters (Ch05–Ch06)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Viscosity model</h3>
+          <ul>
+            <li>Castro–Macosko or equivalent cure-dependent form</li>
+            <li>Predicts flow window closure</li>
+            <li>Input: Arrhenius parameters, gel point (Ch04)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Compaction model</h3>
+          <ul>
+            <li>Empirical or physics-based thickness vs pressure relationship</li>
+            <li>Predicts final part thickness and fiber volume fraction</li>
+            <li>Input: press force, tool geometry (Ch07)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Stress/warpage model</h3>
+          <ul>
+            <li>Cure shrinkage + thermal contraction under constraint</li>
+            <li>Predicts residual stress and part distortion</li>
+            <li>Input: anisotropic CTE, modulus evolution (Ch14)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>16.3 Design of Experiments (DOE) for SMC process development</h2>
+      <p>
+        DOE is the most reliable way to separate the effects of temperature, pressure, time, charge design,
+        and material condition. Use a structured sequence:
+      </p>
+
+      <h3>16.3.1 Phase 1: Screening</h3>
+      <p>
+        Identify which factors actually matter for your defect mode.
+        Use a fractional factorial (2^(k-p)) or Plackett-Burman design.
+        Typical screening factors:
+      </p>
+      <ul>
+        <li>Tool temperature (high / low)</li>
+        <li>Closing speed (fast / slow)</li>
+        <li>Packing pressure (high / low)</li>
+        <li>Charge mass (high / low)</li>
+        <li>Charge placement (pattern A / pattern B)</li>
+        <li>Material out-time (fresh / aged)</li>
+      </ul>
+
+      <h3>16.3.2 Phase 2: Optimization</h3>
+      <p>
+        For the significant factors from Phase 1, use a response-surface design (e.g., Central Composite)
+        to map the process window and find optimal settings for:
+      </p>
+      <ul>
+        <li>Minimum porosity</li>
+        <li>Target flexural strength</li>
+        <li>Minimum thickness variation</li>
+        <li>Maximum surface quality score</li>
+      </ul>
+
+      <h3>16.3.3 Phase 3: Robustness</h3>
+      <p>
+        Verify that the optimal recipe is insensitive to normal manufacturing variability.
+        Deliberately vary noise factors (material maturity, tool temperature drift, charge mass scatter)
+        and confirm that the response remains within specification.
+      </p>
+
+      <h2>16.4 Scale-up: from pilot to production</h2>
+      <p>
+        Scaling SMC from prototype to production is not simply “make it bigger.” Key translation rules:
+      </p>
+
+      <div class="grid two">
+        <div class="panel">
+          <h3 style="margin-top:0;">Thickness scaling</h3>
+          <ul>
+            <li>Heat-up time increases with the square of thickness</li>
+            <li>Exotherm risk grows nonlinearly in thick sections</li>
+            <li>Flow distance may need reduction or multiple charges</li>
+            <li>Clamp tonnage must scale with projected area, not just thickness</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0;">Tooling scaling</h3>
+          <ul>
+            <li>Temperature uniformity harder to maintain across large platens</li>
+            <li>Vent spacing must increase; vent count grows with cavity size</li>
+            <li>Tool stiffness must prevent deflection under full tonnage</li>
+            <li>Ejection system must handle larger areas without part distortion</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>16.4.1 The “similarity criteria” checklist</h3>
+      <p>
+        When scaling, maintain these dimensionless or ratio-based invariants where possible:
+      </p>
+      <ul>
+        <li><strong>Coverage ratio:</strong> keep constant to preserve flow distance scaling</li>
+        <li><strong>Biot number for heat transfer:</strong> Bi = hL/k; if Bi changes, thermal response changes</li>
+        <li><strong>Filling time / gel time ratio:</strong> should remain &lt; 0.8 for robust fill</li>
+        <li><strong>Pressure / viscosity ratio:</strong> governs compaction and void collapse (Ch08)</li>
+      </ul>
+
+      <h2>16.5 Model calibration and validation workflow</h2>
+      <ol>
+        <li><strong>Material characterization:</strong> DSC kinetics, rheology, thermal properties (cp, k), cure shrinkage</li>
+        <li><strong>Model parameterization:</strong> fit kinetic model, viscosity model, compaction law</li>
+        <li><strong>Validation on benchmark geometry:</strong> predict and compare against instrumented trials (temperature traces, press curves, final DOC)</li>
+        <li><strong>Iterative refinement:</strong> adjust parameters until predictions match within acceptable tolerance</li>
+        <li><strong>Production application:</strong> use model for recipe generation, window mapping, and risk assessment</li>
+      </ol>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Practical rule</h3>
+        <p style="margin:0;">
+          Never trust a model more than one geometry away from validation data. If you validate on a 2 mm flat plaque,
+          do not immediately trust predictions for a 12 mm ribbed structural part without additional validation.
+        </p>
+      </div>
+
+      <h2>16.6 Digital twin and advanced control preview</h2>
+      <p>
+        In advanced manufacturing, a digital twin couples real-time sensor data (Ch11) with a running simulation
+        to predict part state during the cycle. Benefits:
+      </p>
+      <ul>
+        <li>Predict DOC and temperature before demold without destructive tests</li>
+        <li>Detect deviations from expected behavior early (e.g., vent blockage, material drift)</li>
+        <li>Enable adaptive control: adjust pressure or dwell in real time to hit targets</li>
+      </ul>
+      <p class="small">
+        Digital twins require robust sensor integration, fast solvers, and validated models. They are an evolution
+        of the golden curve method (Ch11), not a replacement for good process fundamentals.
+      </p>
+
+      <h2>16.7 Industrialization checklist</h2>
+      <div class="panel">
+        <ol>
+          <li><strong>Material data package:</strong> kinetics, rheology, thermal properties, shrinkage data</li>
+          <li><strong>Baseline process recipe:</strong> temperature, pressure, time, charge design locked</li>
+          <li><strong>Instrumented trials:</strong> temperature traces, press curves, dimensional checks</li>
+          <li><strong>DOE-driven optimization:</strong> screen, optimize, verify robustness</li>
+          <li><strong>Qualification plan:</strong> Level 1–4 tests per Ch15, with sampling plan</li>
+          <li><strong>Control plan:</strong> golden curves, reaction plans, SPC limits (Ch11)</li>
+          <li><strong>Documentation:</strong> traveler fields, recipe management, deviation tracking</li>
+        </ol>
+      </div>
+
+      <h2>16.8 What’s next: advanced formulations and applications</h2>
+      <p>
+        The final chapters dive into advanced SMC formulations (including 15-ingredient systems) and
+        real-world case studies across automotive, truck, and aerospace applications.
+      </p>
+
+      <div class="pager">
+        <a href="ch15_testing_qualification.html">Prev: Ch15</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch17_advanced_formulations.html">Next: Ch17</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 16 — Simulation, DOE & Scale-Up</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>
