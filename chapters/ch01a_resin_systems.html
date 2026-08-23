@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ch01A — Resin Systems | Thermoset SMC Compression Molding</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="title">Thermoset SMC Compression Molding</div>
+        <div class="subtitle">Chapter 01A — Resin Systems</div>
+      </div>
+      <nav class="navlinks">
+        <a href="../toc.html">Table of Contents</a>
+        <a href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="breadcrumb">Part I — Materials Deep Dive • Chapter 01A</div>
+      <h1>Resin Systems: Types, Chemistry, and Selection</h1>
+
+      <div class="callout">
+        <strong>Why resin selection is the first decision</strong>
+        <p style="margin:0;">
+          The resin matrix determines the processing window (viscosity, gel time, cure temperature),
+          the achievable mechanical and thermal properties (Tg, HDT, strength, toughness), cost,
+          and downstream compatibility (paintability, chemical resistance, fire performance).
+          Choosing the wrong resin family cannot be corrected by process optimization alone.
+        </p>
+      </div>
+
+      <h2>1A.1 Unsaturated Polyester (UPR)</h2>
+      <p>
+        UPR is the <strong>dominant resin system</strong> in SMC, accounting for &gt;85% of global
+        production volume. UPR consists of an unsaturated polyester backbone dissolved in a reactive
+        diluent (typically styrene at 30–45 wt%), which serves as both a viscosity reducer and a
+        crosslinking co-monomer. Cure occurs via free-radical copolymerization of the polyester
+        double bonds with styrene, initiated by organic peroxides at elevated temperature.
+      </p>
+
+      <h3>UPR backbone variants</h3>
+      <div class="grid two">
+        <div class="panel">
+          <h4 style="margin-top:0;">Orthophthalic (Ortho-UPR)</h4>
+          <ul>
+            <li>Lowest cost; standard for non-demanding applications</li>
+            <li>Moderate water resistance; Tg typically 70–110 °C</li>
+            <li>Good processability; moderate shrinkage (6–10% linear without LPA)</li>
+            <li>Typical uses: general structural, non-cosmetic parts, commodity grades</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4 style="margin-top:0;">Isophthalic (Iso-UPR)</h4>
+          <ul>
+            <li>Better hydrolytic stability and chemical resistance than ortho</li>
+            <li>Higher Tg range (100–140 °C); better mechanical properties</li>
+            <li>~15–25% cost premium over ortho</li>
+            <li>Typical uses: Class A automotive, chemical-resistant parts, marine</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4 style="margin-top:0;">DCPD-modified UPR</h4>
+          <ul>
+            <li>Dicyclopentadiene modification provides lower styrene demand and lower cost</li>
+            <li>Good surface quality; lower water absorption than ortho</li>
+            <li>Tg typically 80–120 °C; moderate mechanical properties</li>
+            <li>Typical uses: automotive body panels, recreational vehicles</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4 style="margin-top:0;">Hybrid / specialty UPR</h4>
+          <ul>
+            <li>Bisphenol-A fumarate: high chemical resistance; used in corrosion-grade FRP</li>
+            <li>Chlorendic: inherent flame retardancy; niche electrical/FR applications</li>
+            <li>These are rarely used in high-volume SMC but may appear in specialty grades</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>1A.2 Vinyl Ester (VE)</h2>
+      <p>
+        Vinyl ester resins are formed by reacting an epoxy resin (typically bisphenol-A diglycidyl
+        ether) with methacrylic acid. The resulting backbone has reactive double bonds only at the
+        chain ends (unlike UPR which has internal unsaturation), providing:
+      </p>
+      <ul>
+        <li><strong>Superior corrosion resistance:</strong> fewer ester linkages exposed to hydrolysis</li>
+        <li><strong>Higher toughness and elongation:</strong> 4–7% vs 1–3% for typical UPR</li>
+        <li><strong>Better fatigue resistance:</strong> important for structural and cyclic-load applications</li>
+        <li>Tg range: 100–150 °C; HDT up to 170 °C for novolac VE variants</li>
+        <li>Cost: 1.5–2.5× UPR; justified when corrosion, toughness, or fatigue are critical</li>
+      </ul>
+      <p>
+        <strong>Novolac vinyl esters</strong> (epoxy novolac backbone) push Tg above 150 °C and provide
+        excellent solvent resistance, used in aggressive chemical environments.
+      </p>
+
+      <h2>1A.3 Epoxy SMC</h2>
+      <p>
+        Epoxy-based SMC is used when <strong>maximum mechanical performance, thermal stability, and
+        dimensional precision</strong> are required. Epoxy SMC typically uses latent hardener systems
+        (dicyandiamide, aromatic amines, or anhydrides) that provide long shelf life and rapid cure
+        at elevated temperature (140–180 °C).
+      </p>
+      <div class="grid two">
+        <div class="panel">
+          <h4 style="margin-top:0;">Advantages</h4>
+          <ul>
+            <li>Highest Tg achievable (150–220 °C)</li>
+            <li>Excellent adhesion to fibers (lower sizing sensitivity)</li>
+            <li>Low cure shrinkage (1–3%)</li>
+            <li>Superior dimensional stability and creep resistance</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4 style="margin-top:0;">Limitations</h4>
+          <ul>
+            <li>Cost: 3–5× UPR</li>
+            <li>Longer cure times at comparable temperatures</li>
+            <li>No styrene diluent → higher initial viscosity; different thickening chemistry</li>
+            <li>Brittleness unless toughened (rubber or thermoplastic modifiers)</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        Typical applications: aerospace secondary structures, automotive structural nodes (e.g., B-pillar
+        reinforcements), high-temperature under-hood components, and EV battery structural elements.
+      </p>
+
+      <h2>1A.4 Phenolic and Specialty Resins</h2>
+      <p>
+        <strong>Phenolic (resol) SMC</strong> is selected when fire/smoke/toxicity (FST) performance
+        is the primary driver. Phenolic resins offer:
+      </p>
+      <ul>
+        <li>LOI &gt; 35–45% without halogenated FR additives</li>
+        <li>Very low smoke generation (critical for rail, mass transit, tunnels, aircraft interiors)</li>
+        <li>HDT &gt; 150 °C; good dimensional stability at elevated temperature</li>
+        <li>Limitations: darker color (brown/black), brittleness, water condensate during cure, more aggressive on tooling</li>
+      </ul>
+      <p>
+        Other specialty systems include <strong>BMI (bismaleimide)</strong> for aerospace &gt;200 °C
+        applications and <strong>cyanate ester</strong> for low dielectric loss radome applications.
+        These are very niche and rarely seen in volume SMC production.
+      </p>
+
+      <h2>1A.5 Low-Profile Additives (LPAs)</h2>
+      <p>
+        LPAs are thermoplastic polymers added to the resin paste (5–15 phr) that <strong>compensate
+        for cure shrinkage</strong> by phase-separating during cure and creating microvoids that offset
+        polymerization contraction. This is critical for Class A automotive surfaces.
+      </p>
+      <table style="border-collapse:collapse; width:100%;">
+        <thead>
+          <tr>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">LPA Type</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Typical Loading (phr)</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Shrinkage Control</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Surface Quality</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">PVAc (polyvinyl acetate)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">8–15</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Excellent (near-zero shrinkage)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Excellent</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Most common for Class A; can reduce mechanical properties 5–15%</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">PMMA</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">5–12</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Good</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Good</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Better mechanical retention; used in semi-structural grades</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">PS (polystyrene)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">5–10</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Moderate</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Moderate</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Lower cost; used in non-cosmetic structural grades</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">PE (polyethylene)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">5–10</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Moderate</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Fair</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Can impair paintability; used in non-painted applications</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>1A.6 Styrene and Reactive Diluents</h2>
+      <p>
+        Styrene serves a dual role: (1) <strong>viscosity reducer</strong> — makes the paste
+        processable, and (2) <strong>crosslinking co-monomer</strong> — forms the cured network.
+        Typical styrene content in UPR-based SMC paste is 30–45 wt% of the resin.
+      </p>
+      <div class="callout">
+        <strong>Emissions and regulatory pressure</strong>
+        <p style="margin:0;">
+          Styrene is classified as a possible carcinogen (IARC Group 2A). Workplace exposure limits
+          (20–50 ppm TWA depending on jurisdiction) and VOC regulations are driving the industry toward
+          <strong>low-styrene</strong> (&lt;30%) and <strong>styrene-free</strong> formulations using
+          alternative diluents (e.g., vinyl toluene, diallyl phthalate, methacrylate monomers).
+          Styrene-free UPR typically costs 20–40% more and may require reformulation of thickening
+          and cure systems.
+        </p>
+      </div>
+
+      <h2>1A.7 Initiator (Catalyst) Systems</h2>
+      <p>
+        Free-radical initiators decompose at elevated temperature to generate radicals that trigger
+        crosslinking. The choice of initiator controls the <strong>onset temperature</strong> and
+        <strong>cure rate profile</strong>.
+      </p>
+      <table style="border-collapse:collapse; width:100%;">
+        <thead>
+          <tr>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Initiator</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Abbreviation</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">10 h t½ (°C)</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Activation Range (°C)</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Typical Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Benzoyl peroxide</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">BPO</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">73</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">75–95</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Low-temperature kick-start; dual-initiator "low" component</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">tert-Butyl peroxybenzoate</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">TBPB</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">104</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">100–130</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Standard SMC initiator; most common single-initiator choice</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Di-tert-butyl peroxide</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">DTBP</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">124</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">125–155</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">High-temperature "finishing" initiator; ensures high final cure</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">tert-Butyl peroxy-2-ethylhexanoate</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">TBPEH</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">74</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">70–90</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Fast low-temperature cure; short cycle times</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="panel">
+        <h3 style="margin-top:0;">Dual-initiator strategy for thick parts</h3>
+        <p>
+          For parts &gt;10 mm thick, a <strong>dual-initiator system</strong> (e.g., TBPEH + TBPB or
+          BPO + DTBP) provides staged cure: the low-temperature initiator starts cure uniformly before
+          the exotherm develops, while the high-temperature initiator ensures complete cure in the
+          interior where exotherm peaks can exceed the mold temperature by 20–60 °C (see Ch06).
+        </p>
+      </div>
+
+      <h2>1A.8 Inhibitors and Shelf Life</h2>
+      <p>
+        Inhibitors (radical scavengers) are added at <strong>low concentrations (50–500 ppm)</strong>
+        to prevent premature polymerization during storage and paste mixing. Common inhibitors:
+      </p>
+      <ul>
+        <li><strong>BHT (butylated hydroxytoluene):</strong> general-purpose; effective at 100–300 ppm</li>
+        <li><strong>Hydroquinone (HQ):</strong> strong inhibition; can cause yellowing; 50–200 ppm</li>
+        <li><strong>p-Benzoquinone (PBQ):</strong> fast-acting; used in combination systems</li>
+        <li><strong>MEHQ (monomethyl ether of hydroquinone):</strong> standard styrene stabilizer; 15–50 ppm in monomer</li>
+      </ul>
+      <p>
+        Shelf life of uncured SMC is typically <strong>2–6 months at 18–25 °C</strong>, depending on
+        resin reactivity, inhibitor level, and thickener type. Higher storage temperatures accelerate
+        inhibitor consumption and maturation advance, shortening the useful molding window.
+      </p>
+
+      <h2>1A.9 Resin Selection Guide</h2>
+      <div class="callout">
+        <strong>How to use this table</strong>
+        <p style="margin:0;">
+          Start with the application requirements in the left column, then read across for the
+          recommended resin family and the key tradeoffs. This is a starting-point guide — verify
+          with supplier datasheets and lab trials for your specific formulation.
+        </p>
+      </div>
+      <table style="border-collapse:collapse; width:100%;">
+        <thead>
+          <tr>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Application Requirement</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Recommended Resin</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Key Tradeoff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Low cost, moderate performance</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Ortho-UPR</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Limited chemical resistance; moderate Tg</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Class A automotive surface</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Iso-UPR or DCPD-UPR + high LPA</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">LPA reduces mechanical properties 5–15%</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Chemical/corrosion resistance</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Vinyl Ester (standard or novolac)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1.5–2.5× cost of UPR</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">High Tg / structural (>150 °C)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Epoxy or Novolac VE</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Higher cost; longer cure; different thickening</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Fire/smoke/toxicity (FST)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Phenolic (resol)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Dark color; brittle; water release during cure</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Impact / fatigue resistance</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Vinyl Ester</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Higher elongation improves toughness</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Aerospace / high-temp structural</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Epoxy (or BMI for >200 °C)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">3–5× cost; very low volume SMC</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Resin Comparison Table (master reference)</h2>
+      <table style="border-collapse:collapse; width:100%;">
+        <thead>
+          <tr>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Property</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">UPR (Ortho)</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">UPR (Iso)</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Vinyl Ester</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Epoxy</th>
+            <th style="padding:6px 10px; border:1px solid #e6e6e6; background:#f6f8fa; text-align:left;">Phenolic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Density (g/cm³)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1.10–1.15</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1.10–1.15</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1.12–1.16</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1.15–1.25</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1.20–1.30</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Tg range (°C)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">70–110</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">100–140</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">100–150</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">150–220</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">150–200+</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">HDT at 1.8 MPa (°C)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">60–100</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">90–130</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">100–170</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">140–200</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">150–180</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Tensile strength (MPa, neat)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">40–65</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">55–80</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">70–90</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">60–90</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">35–60</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Elongation at break (%)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1–3</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">2–4</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">4–7</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">2–6</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">0.5–2</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Cure shrinkage (%)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">6–10</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">5–8</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">5–8</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1–3</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">0–2</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Corrosion resistance</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Fair</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Good</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Excellent</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Good–Excellent</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Good</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">FST rating</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Poor</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Poor</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Poor–Fair</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Fair</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Excellent</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">Cost index (1 = lowest)</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1.0</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1.2</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">1.8</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">3.5</td>
+            <td style="padding:6px 10px; border:1px solid #e6e6e6;">2.0</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">
+        Values are for neat (unreinforced) cured resin. Composite properties depend on fiber type, content, and orientation.
+        See Ch01B for fiber effects and the Data Compendium for composite property tables.
+      </p>
+
+      <div class="pager">
+        <a href="ch01_smc_fundamentals.html">Prev: Ch01</a>
+        <a href="../toc.html">Table of Contents</a>
+        <a href="ch01b_glass_fiber_reinforcement.html">Next: Ch01B</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Chapter 01A — Resin Systems</div>
+      <div><a href="../toc.html">ToC</a></div>
+    </div>
+  </footer>
+
+  <script src="../assets/book.js"></script>
+</body>
+</html>
